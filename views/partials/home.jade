@@ -49,34 +49,42 @@ div(ng-init="init()", anim="fadeIn")
                 h1 EDUCATION
             .row
                 .col-xs-4
-                    .panel.panel-default(style="border-radius: 10px;")
+                    .panel.panel-default.specific(style="border-radius: 10px;", ng-click="changeMode(0)")
                         .panel-body
                             h3(style="text-align:center") Education 1
                             hr(class="style-one")
                             p Details ...
                 .col-xs-4
-                    .panel.panel-default(style="border-radius: 10px;")
+                    .panel.panel-default.specific(style="border-radius: 10px;",ng-click="changeMode(1)")
                         .panel-body
                             h3(style="text-align:center") Education 2
                             hr(class="style-one")
                             p Details ...
                 .col-xs-4
-                    .panel.panel-default(style="border-radius: 10px;")
+                    .panel.panel-default.specific(style="border-radius: 10px;",ng-click="changeMode(2)")
                         .panel-body
                             h3(style="text-align:center") Education 3
                             hr(class="style-one")
                             p Details ...
-            br
-            br
+            .row
+                .col-xs-12
+                    .panel.panel-default(style="border-radius: 10px;")
+                        .panel-body
+                            p Details ...
+                            //details one
+                            div(id="detailsOne", ng-show="mode==0")
+                                p Details One
 
-            p Bacon ipsum dolor sit amet sausage tail capicola ground round hamburger ham hock. Short ribs pig andouille meatball, pastrami tri-tip fatback ham hock shank kielbasa swine. Rump pancetta jerky kielbasa doner beef ribs tongue hamburger strip steak drumstick andouille shoulder shank flank. Swine drumstick meatball pig beef sausage strip steak.
-            h2 Section 1
-            p Bacon ipsum dolor sit amet sausage tail capicola ground round hamburger ham hock. Short ribs pig andouille meatball, pastrami tri-tip fatback ham hock shank kielbasa swine. Rump pancetta jerky kielbasa doner beef ribs tongue hamburger strip steak drumstick andouille shoulder shank flank. Swine drumstick meatball pig beef sausage strip steak.
-            h2 Section 1
-            p Bacon ipsum dolor sit amet sausage tail capicola ground round hamburger ham hock. Short ribs pig andouille meatball, pastrami tri-tip fatback ham hock shank kielbasa swine. Rump pancetta jerky kielbasa doner beef ribs tongue hamburger strip steak drumstick andouille shoulder shank flank. Swine drumstick meatball pig beef sausage strip steak.
-            h2 Section 1
-            p Bacon ipsum dolor sit amet sausage tail capicola ground round hamburger ham hock. Short ribs pig andouille meatball, pastrami tri-tip fatback ham hock shank kielbasa swine. Rump pancetta jerky kielbasa doner beef ribs tongue hamburger strip steak drumstick andouille shoulder shank flank. Swine drumstick meatball pig beef sausage strip steak.
+                            //details one
+                            div(id="detailsTwo", ng-show="mode==1")
+                                p Details Two
+
+                            //details one
+                            div(id="detailsThree", ng-show="mode==2")
+                                p Details Three
+
         .emptyBox(style="height:500px;background:inherit")
+
 
     div(style="background: url(land.jpg) no-repeat center center fixed;-webkit-background-size: cover;background-size:cover;-moz-background-size:cover")
         section.box(id="experience")
@@ -86,27 +94,62 @@ div(ng-init="init()", anim="fadeIn")
                     i(class="fa fa-road fa-stack-1x fa-inverse ")
                 h1 EXPERIENCE
 
-            .row(style='background:#778899;color:white;margin-top:60px')
-                .col-xs-4(style="text-align:right;")
-                    h2 INFOTEL Conseil
-                    h5 Six month, 2014
-                .col-xs-6(style="margin-left:30px;border-left:1px dashed white;")
-                    h2 Titre du stage
-                    h3 Description
-            .row
-                .col-xs-6.col-xs-offset-1(style='border-right:1px dashed #778899')
-                    h2 Titre du stage
-                    h3 Description
-                .col-xs-4(style="text-align:left;")
-                    h2 AERODRONES
-                    h5 Four month, 2013
-            .row(style='background:#778899;color:white;')
-                .col-xs-4(style="text-align:right")
-                    h2 SOCATA
-                    h5 One month, 2009
-                .col-xs-6(style="margin-left:30px;border-left:1px dashed white;")
-                    h2 Titre du stage
-                    h3 Description
+            .panel-group(id="accor")
+                .panel.panel-default
+                    .panel-heading(style='background:#778899;color:white;')
+                            //p(data-toggle="collapse", data-parent="#accor", href="#theone",onclick="return false;") CrashTEst
+                            .row(style='background:#778899;color:white;',data-toggle="collapse", data-parent="#accor", href="#theone",onclick="return false;")
+                                .col-xs-4(style="text-align:right;")
+                                    h2 INFOTEL Conseil
+                                    h5 Six month, 2014
+                                .col-xs-6(style="margin-left:30px;border-left:1px dashed white;")
+                                    h2 Titre du stage
+                                    h3 Description
+                    div.panel-collapse.collapse(id="theone")
+                        .panel-body
+                            h2 Contexte du projet
+                            p Blablabla
+                            br
+                            h2 Skills
+                            p Les skills
+                            br
+
+                .panel.panel-default
+                    .panel-heading(style='background:#fff')
+                        .row(data-toggle="collapse", data-parent="#accor", href="#thetwo",onclick="return false;")
+                            .col-xs-6.col-xs-offset-1(style='border-right:1px dashed #778899')
+                                h2 Titre du stage
+                                h3 Description
+                            .col-xs-4(style="text-align:left;")
+                                h2 AERODRONES
+                                h5 Four month, 2013
+                    div.panel-collapse.collapse(id="thetwo")
+                        .panel-body(style='background:#778899;color:white;')
+                            h2 Contexte du projet
+                            p Blablabla
+                            br
+                            h2 Skills
+                            p Les skills
+                            br
+                .panel.panel-default
+                    .panel-heading(style='background:#778899;color:white;')
+                        .row(data-toggle="collapse", data-parent="#accor", href="#thethredd",onclick="return false;")
+                            .col-xs-4(style="text-align:right")
+                                h2 SOCATA
+                                h5 One month, 2009
+                            .col-xs-6(style="margin-left:30px;border-left:1px dashed white;")
+                                h2 Titre du stage
+                                h3 Description
+                            a CrashTEst 2
+                    div.panel-collapse.collapse(id="thethredd")
+                        .panel-body
+                            h2 Contexte du projet
+                            p Blablabla
+                            br
+                            h2 Skills
+                            p Les skills
+                            br
+
 
 
         .emptyBox(style="height:500px;background:inherit")
@@ -155,12 +198,68 @@ div(ng-init="init()", anim="fadeIn")
 
     div(style="background: url(land.jpg) no-repeat center center fixed; -webkit-background-size: cover;background-size:cover;-moz-background-size:cover")
         section.box(id="about")
-            div(style="text-align:center")
+            div.container-fluid(style="text-align:center")
                 span(class="fa-stack fa-5x")
                     i(class="fa fa-square fa-stack-2x")
                     i(class="fa fa-coffee fa-stack-1x fa-inverse ")
                 h1 ABOUT
-            p Bacon ipsum dolor sit amet sausage tail capicola ground round hamburger ham hock. Short ribs pig andouille meatball, pastrami tri-tip fatback ham hock shank kielbasa swine. Rump pancetta jerky kielbasa doner beef ribs tongue hamburger strip steak drumstick andouille shoulder shank flank. Swine drumstick meatball pig beef sausage strip steak.
+                .row
+                    .col-xs-4
+                        .view.view-first
+                            img(src="blog.png")
+                            .mask
+                                h2 Hover 1
+                                p TEETETET
+                    .col-xs-4
+                        .view.view-second
+                            img(src="/css/13.jpg")
+                            .mask
+                                h2 Hover 2
+                                p TEETETET
+                    .col-xs-4
+                        .view.view-third
+                            img(src="/css/13.jpg")
+                            .mask
+                                h2 Hover 3
+                                p TEETETET
+                .row
+                    .col-xs-4
+                        .view.view-fourth
+                            img(src="blog.png")
+                            .mask
+                                h2 Hover 4
+                                p TEETETET
+                    .col-xs-4
+                        .view.view-fifth
+                            img(src="/css/13.jpg")
+                            .mask
+                                h2 Hover 5
+                                p TEETETET
+                    .col-xs-4
+                        .view.view-sixth
+                            img(src="/css/13.jpg")
+                            .mask
+                                h2 Hover 6
+                                p TEETETET
+                .row
+                    .col-xs-4
+                        .view.view-seventh
+                            img(src="blog.png")
+                            .mask
+                                h2 Hover 7
+                                p TEETETET
+                    .col-xs-4
+                        .view.view-eighth
+                            img(src="/css/13.jpg")
+                            .mask
+                                h2 Hover 8
+                                p TEETETET
+                    .col-xs-4
+                        .view.view-tenth
+                            img(src="/css/13.jpg")
+                            .mask
+                                h2 Hover 9
+                                p TEETETET
         .emptyBox(style="height:500px;background:inherit")
 
     div(style="background: url(land.jpg) no-repeat center center fixed; -webkit-background-size: cover;background-size:cover;-moz-background-size:cover")
@@ -190,6 +289,4 @@ div(ng-init="init()", anim="fadeIn")
             .col-xs-3.contact.grow(onclick='window.location.href="http://fr.linkedin.com/pub/pierre-beard/62/690/4b0/";')
                 i(class="fa fa-linkedin-square fa-3x fa-inverse ")
                 h5 LinkedIn
-
-
 

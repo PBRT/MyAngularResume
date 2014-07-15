@@ -1,5 +1,9 @@
 app.controller("HomeCtrl", function($scope, resume){
 
+    //Affichage education
+    $scope.mode=0;
+
+
     //Gestion des ressources
     $scope.skills =[];
     $scope.education = [];
@@ -37,6 +41,10 @@ app.controller("HomeCtrl", function($scope, resume){
 
 
         });
+    }
+
+    $scope.changeMode = function(val){
+        $scope.mode=val;
     }
 
 })

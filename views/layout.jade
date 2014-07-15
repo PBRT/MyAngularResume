@@ -3,7 +3,72 @@ html(ng-app="myApp")
   head
     meta(charset='utf8')
     base(href='/')
-    title Angular Socket.io Seed App
+
+    title Software do it better
+
+    // Librairie JAVASCRIPT
+    script(src='http://code.jquery.com/jquery-2.1.0.min.js')
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js")
+    script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js")
+    script(src='bower_components/angular/angular.js')
+    script(src="libs/angular-resource.min.js")
+    script(src='bower_components/angular-route/angular-route.js')
+    script(src='/socket.io/socket.io.js')
+    script(src='bower_components/angular-socket-io/socket.js')
+    script(src="libs/TweenMax.min.js")
+    script(src="libs/angular-scroll.js")
+    script(src="libs/jquery.lettering.js")
+    script(src="libs/jquery.textillate.js")
+    script(src="libs/IconHoverEffects/js/modernizr.custom.js")
+    script(src="libs/raphael-min.js")
+
+    // Librairies CSS
+    link(rel='stylesheet', href='/less/boot.css')
+    link(rel='stylesheet', href='/css/animate.css')
+    //link(rel='stylesheet', href='/css/component.css')
+    //link(href='http://fonts.googleapis.com/css?family=Oswald',rel='stylesheet',type='text/css')
+    link(href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", rel="stylesheet")
+    //link(rel="stylesheet", type="text/css", href="libs/IconHoverEffects/css/default.css")
+    link(rel="stylesheet" ,type="text/css", href="libs/IconHoverEffects/css/component.css")
     link(rel='stylesheet', href='/css/app.css')
-  body
-    block body
+
+    //Project Files
+    script(src='js/app.js')
+
+    //Controllers
+    script(src="/js/controllers/MainCtrl.js")
+    script(src="/js/controllers/HomeCtrl.js")
+    script(src="/js/controllers/EducationCtrl.js")
+
+    //Services
+    script(src="/js/services/resume.js")
+    script(src="/js/services/socket.js")
+
+    //Directives
+    script(src="/js/directives/directives.js")
+
+    //Filters
+    script(src='js/filters.js')
+
+    //Ressources
+    script(src="/js/ressources/education.js")
+    script(src="/js/ressources/items.js")
+    script(src="/js/ressources/skills.js")
+    //Constantes
+    script(src="/js/constants/constant.js")
+
+
+
+  body(ng-controller="MainCtrl",style="background: url(mount.jpg) no-repeat center center fixed;background-size:cover")
+
+
+      .container-fluid
+          .navbar.navbar-default.navbar-fixed-top(role='navigation', ng-if="displayHome")
+              .navbar-header
+                  a.navbar-brand(style="color:#F1F2F4;font-size:25px",href="#main",du-smooth-scroll, du-scrollspy, offset="50", anim="slideInLeft") PBRT (#Whatever)
+              ul.nav.navbar-nav.pull-right
+                li#yolo(ng-repeat="item in menu", navtab, navtab-item="{{item}}", navtab-rang="{{item.rang}}")
+                    a(href="{{item.url}}", style="color:#F1F2F4;font-size:20px",du-smooth-scroll, du-scrollspy, offset="50") {{item.name}}
+
+
+      block body

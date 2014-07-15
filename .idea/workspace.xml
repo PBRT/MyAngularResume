@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1755a660-a898-4ad7-a26a-b3485abd73ca" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controllers/HomeCtrl.js" afterPath="$PROJECT_DIR$/public/js/controllers/HomeCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/directives/directives.js" afterPath="$PROJECT_DIR$/public/js/directives/directives.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/home.jade" afterPath="$PROJECT_DIR$/views/partials/home.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/services/resume.js" afterPath="$PROJECT_DIR$/public/js/services/resume.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style_common.css" afterPath="$PROJECT_DIR$/public/css/style_common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="1755a660-a898-4ad7-a26a-b3485abd73ca" name="Default" comment="" />
     <ignored path="angular-socket-io-seed.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,8 +26,8 @@
       <file leaf-file-name="home.jade" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/partials/home.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5683564" vertical-offset="2210" max-vertical-offset="5535">
-              <caret line="172" column="39" selection-start-line="172" selection-start-column="39" selection-end-line="172" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.49923196" vertical-offset="2210" max-vertical-offset="5535">
+              <caret line="169" column="27" selection-start-line="169" selection-start-column="27" selection-end-line="169" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -871,8 +863,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/home.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5683564" vertical-offset="2210" max-vertical-offset="5535">
-          <caret line="172" column="39" selection-start-line="172" selection-start-column="39" selection-end-line="172" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.49923196" vertical-offset="2210" max-vertical-offset="5535">
+          <caret line="169" column="27" selection-start-line="169" selection-start-column="27" selection-end-line="169" selection-end-column="27" />
           <folding />
         </state>
       </provider>

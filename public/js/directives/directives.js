@@ -112,7 +112,7 @@ directives.directive('styleExp', function($compile){
                 elm.css('background', '#778899')
                 elm.css('color', 'white')
             }else{
-                elm.css('background', '#fff')
+                elm.css('background', 'lightgrey')
             }
         }
     }

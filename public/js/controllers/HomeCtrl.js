@@ -13,7 +13,10 @@ app.controller("HomeCtrl", function($scope, resume){
     $scope.skillLangages = [];
     $scope.skillFront = [];
     $scope.skillBack = [];
-    $scope.skillOther= [];
+    $scope.skillVersion= [];
+    $scope.skillMethod= [];
+    $scope.skillLib= [];
+    $scope.skillTools= [];
 
     $scope.init = function() {
 
@@ -27,7 +30,24 @@ app.controller("HomeCtrl", function($scope, resume){
         $scope.projets = resume.getProjets();
         $scope.skills = resume.getSkills();
 
-        console.log($scope.experience.indexOf($scope.experience[0]))
+        //Classement des skills
+        for (var it = 0; it < $scope.skills.length; it++) {
+            if ($scope.skills[it].type == "1")
+                $scope.skillLangages.push($scope.skills[it])
+            if ($scope.skills[it].type == "2")
+                $scope.skillFront.push($scope.skills[it])
+            if ($scope.skills[it].type == "3")
+                $scope.skillBack.push($scope.skills[it])
+            if ($scope.skills[it].type == "4")
+                $scope.skillVersion.push($scope.skills[it])
+            if ($scope.skills[it].type == "5")
+                $scope.skillMethod.push($scope.skills[it])
+            if ($scope.skills[it].type == "6")
+                $scope.skillLib.push($scope.skills[it])
+            if ($scope.skills[it].type == "7")
+                $scope.skillTools.push($scope.skills[it])
+        }
+
 
         //Recupération des données
         /*resume.getItems(function () {

@@ -3,48 +3,9 @@
 var services = angular.module("myApp.services", []);
 
 //Service assurant la gestion des données globale à l'application
-services.factory("resume", function(Item, Skills){
+services.factory("resume", function(Data){
 
-
-    //JSON Contenant l'ensemble des informations, evite d'utiliser le serveur REST
-    var data = {
-
-        experience : [
-            {   nom: "INFOTEL Conseil",
-                titre: "Developpement d'une application multiplateforme",
-                role: "Stagiaire développeur full-stack",
-                date_debut :"10/02/2014",
-                date_fin: "01/08/2014",
-                duree: "6 mois",
-                description: "Developpement complet d'une application multiplateforme composée de quatres applications distinctes, interragissant avec un serveur",
-                skills : [  {nom : "JavaScript"},
-                            {nom : "AngularJS"},
-                            {nom : "NodeJS"},
-                            {nom : "HTML/CSS"},
-                            {nom : "Bootstrap"},
-                            {nom : "SailsJS"},
-                            {nom : "JQueryMobile"},
-                            {nom : "Android"}
-                         ],
-                contexte:"Au sein de la cellule mobilité de Infotel Toulouse"
-            },
-            {   nom: "AERODRONES",
-                titre: "",
-                role: "",
-                date_debut :"",
-                date_fin: "",
-                description: "",
-                skills : "",
-                contexte:""
-            }
-
-        ],
-        skills : [],
-        education: [],
-        projets: [],
-        about: []
-
-    };
+    var data = Data;
 
     var experience = [];
     var skills = [];

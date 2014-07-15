@@ -38,29 +38,21 @@ div(ng-init="init()", anim="fadeIn")
                 .col-xs-4(onclick="window.open('https://angularjs.org/', '_blank')")
                     .panel.panel-default.specific(style="border-radius: 10px;", ng-click="changeMode(0)")
                         .panel-body
-                            img(src="/images/angular.png", style="width:100px;height:100px")
-                            h4 AngularJS (Front-end)
-
-                .col-xs-4(onclick="window.open('http://sailsjs.org/#!', '_blank')")
-                    .panel.panel-default.specific(style="border-radius: 10px;", ng-click="changeMode(0)")
-                        .panel-body
                             img(src="/images/sails.png", style="width:250px;height:100px")
                             h4 SailsJS (Back-end based on NodeJS)
 
-                .col-xs-4(onclick="window.open('http://getbootstrap.com/', '_blank')")
+                .col-xs-4(onclick="window.open('http://sailsjs.org/#!', '_blank')")
                     .panel.panel-default.specific(style="border-radius: 10px;", ng-click="changeMode(0)")
                         .panel-body
                             img(src="/images/bootstrap.png", style="width:100px;height:100px")
                             h4 Bootstrap (Built to be responsive)
 
+                .col-xs-4(onclick="window.open('http://getbootstrap.com/', '_blank')")
+                    .panel.panel-default.specific(style="border-radius: 10px;", ng-click="changeMode(0)")
+                        .panel-body
+                            img(src="/images/angular.png", style="width:100px;height:100px")
+                            h4 AngularJS (Front-end)
 
-
-                //div(id='canvas', ng-click='draw()')
-                        span(class="fa-stack fa-4x")
-                            i(class="fa fa-square fa-stack-2x")
-                            i(class="fa fa-desktop fa-stack-1x fa-inverse ")
-                        h3 User Interface Design
-                        h2 TEst
 
         .emptyBox(style="height:500px;background:inherit")
 
@@ -120,80 +112,38 @@ div(ng-init="init()", anim="fadeIn")
 
             .panel-group(id="accor")
                 .panel.panel-default(ng-repeat="exp in experience")
-                    .panel-heading(style-exp="{{experience.indexOf(exp)}}")
+                    .panel-heading.hoov(style-exp="{{experience.indexOf(exp)}}")
                             //p(data-toggle="collapse", data-parent="#accor", href="#theone",onclick="return false;") CrashTEst
-                            .row(data-toggle="collapse", data-parent="#accor", href="#the{{experience.indexOf(exp)}}",onclick="return false;")
-                                .col-xs-4(style="text-align:right;")
+                            .row.grow(data-toggle="collapse", data-parent="#accor", href="#the{{experience.indexOf(exp)}}",onclick="return false;")
+                                .col-xs-1
+                                .col-xs-1
+                                    h1 {{exp.year}}
+                                .col-xs-1
+                                .col-xs-3(style="text-align:right;")
                                     h2 {{exp.nom}}
                                     p(style="font-size:15px") {{exp.duree}}, from {{exp.date_debut}} to {{exp.date_fin}}
-                                .col-xs-6(style="margin-left:30px;border-left:1px dashed white;")
+                                    p(style="font-size:10px;font-style:italic") {{exp.website}}
+                                .col-xs-5(style="margin-left:30px;border-left:1px dashed white;")
                                     h2 {{exp.titre}}
+                                    p(style="font-size:15px;font-style:italic") {{exp.soustitre}}
+
                     div.panel-collapse.collapse(id="the{{experience.indexOf(exp)}}")
                         .panel-body
-                            h3 {{exp.description}}
+                            .row
+                                .col-xs-6
+                                    p(style="font-size:18px") {{exp.description}}
+                                .col-xs-6
+                                    .panel.panel-default.specific(style="border-radius: 5px;")
+                                        .panel-body
+                                            p Image explicative
                             h2 Context
-                            p {{exp.contexte}}
+                            p(style="font-size:18px")  {{exp.contexte}}
                             br
                             h2 Skills
-                            p(ng-repeat="skill in exp.skills") {{skill.nom}}
-                            br
-
-            //.panel-group(id="accor")
-                .panel.panel-default
-                    .panel-heading(style='background:#778899;color:white;')
-                            //p(data-toggle="collapse", data-parent="#accor", href="#theone",onclick="return false;") CrashTEst
-                            .row(style='background:#778899;color:white;',data-toggle="collapse", data-parent="#accor", href="#theone",onclick="return false;")
-                                .col-xs-4(style="text-align:right;")
-                                    h2 INFOTEL Conseil
-                                    h5 Six month, 2014
-                                .col-xs-6(style="margin-left:30px;border-left:1px dashed white;")
-                                    h2 Titre du stage
-                                    h3 Description
-                    div.panel-collapse.collapse(id="theone")
-                        .panel-body
-                            h2 Contexte du projet
-                            p Blablabla
-                            br
-                            h2 Skills
-                            p Les skills
-                            br
-
-                .panel.panel-default
-                    .panel-heading(style='background:#fff')
-                        .row(data-toggle="collapse", data-parent="#accor", href="#thetwo",onclick="return false;")
-                            .col-xs-6.col-xs-offset-1(style='border-right:1px dashed #778899')
-                                h2 Titre du stage
-                                h3 Description
-                            .col-xs-4(style="text-align:left;")
-                                h2 AERODRONES
-                                h5 Four month, 2013
-                    div.panel-collapse.collapse(id="thetwo")
-                        .panel-body(style='background:#778899;color:white;')
-                            h2 Contexte du projet
-                            p Blablabla
-                            br
-                            h2 Skills
-                            p Les skills
-                            br
-                .panel.panel-default
-                    .panel-heading(style='background:#778899;color:white;')
-                        .row(data-toggle="collapse", data-parent="#accor", href="#thethredd",onclick="return false;")
-                            .col-xs-4(style="text-align:right")
-                                h2 SOCATA
-                                h5 One month, 2009
-                            .col-xs-6(style="margin-left:30px;border-left:1px dashed white;")
-                                h2 Titre du stage
-                                h3 Description
-                            a CrashTEst 2
-                    div.panel-collapse.collapse(id="thethredd")
-                        .panel-body
-                            h2 Contexte du projet
-                            p Blablabla
-                            br
-                            h2 Skills
-                            p Les skills
-                            br
-
+                            .col-md-2(ng-repeat="skill in exp.skills", style="margin-bottom:10px")
+                                .panel.panel-default.specific(style="border-radius: 5px;")
+                                    .panel-body
+                                        h5(style="text-align:center") {{skill.nom}}
 
 
         .emptyBox(style="height:500px;background:inherit")
@@ -207,7 +157,7 @@ div(ng-init="init()", anim="fadeIn")
                 h1 COMPUTER SKILLS
             h2(style="margin-bottom:20px") Computer Skills
             h4 Langages
-            hr(class="style-one")
+            hr(class="style-three")
             .row
                 button.btn.btn-default.col-md-2(ng-repeat="skill in skillLangages",style="margin-left:10px; margin-bottom:10px") {{skill.nom}}
                     br
@@ -215,7 +165,7 @@ div(ng-init="init()", anim="fadeIn")
                         .progress-bar(style="width:{{skill.niveau}}%")
 
             h4 Front-end
-            hr(class="style-one")
+            hr(class="style-three")
             .row
                 button.btn.btn-default.col-md-2(ng-repeat="skill in skillFront",style="margin-left:10px; margin-bottom:10px") {{skill.nom}}
                     br
@@ -223,7 +173,7 @@ div(ng-init="init()", anim="fadeIn")
                         .progress-bar(style="width:{{skill.niveau}}%")
 
             h4 Back-end
-            hr(class="style-one")
+            hr(class="style-three")
             .row
                 button.btn.btn-default.col-md-2(ng-repeat="skill in skillFront",style="margin-left:10px; margin-bottom:10px") {{skill.nom}}
                     br
@@ -231,12 +181,33 @@ div(ng-init="init()", anim="fadeIn")
                         .progress-bar(style="width:{{skill.niveau}}%")
 
             h4 Other
-            hr(class="style-one")
+            hr(class="style-three")
             .row
-                button.btn.btn-default.col-md-2(ng-repeat="skill in skillOther",style="margin-left:10px; margin-bottom:10px") {{skill.nom}}
-                    br
-                    .progress.progress-striped.active(style="margin-top:20px")
-                        .progress-bar(style="width:{{skill.niveau}}%")
+                .col-xs-5
+                    h5 Versionning
+                    button.btn.btn-default.col-md-4(ng-repeat="skill in skillVersion",style="margin-left:10px; margin-bottom:10px") {{skill.nom}}
+                        br
+                        .progress.progress-striped.active(style="margin-top:20px")
+                            .progress-bar(style="width:{{skill.niveau}}%")
+                .col-xs-5
+                    h5 Methodologies
+                    button.btn.btn-default.col-md-4(ng-repeat="skill in skillMethod",style="margin-left:10px; margin-bottom:10px") {{skill.nom}}
+                        br
+                        .progress.progress-striped.active(style="margin-top:20px")
+                            .progress-bar(style="width:{{skill.niveau}}%")
+            .row
+                .col-xs-5
+                    h5 Librairies
+                    button.btn.btn-default.col-md-4(ng-repeat="skill in skillLib",style="margin-left:10px; margin-bottom:10px") {{skill.nom}}
+                        br
+                        .progress.progress-striped.active(style="margin-top:20px")
+                            .progress-bar(style="width:{{skill.niveau}}%")
+                .col-xs-5
+                    h5 Tools
+                    button.btn.btn-default.col-md-4(ng-repeat="skill in skillTools",style="margin-left:10px; margin-bottom:10px") {{skill.nom}}
+                        br
+                        .progress.progress-striped.active(style="margin-top:20px")
+                            .progress-bar(style="width:{{skill.niveau}}%")
 
         .emptyBox(style="height:500px;background:inherit")
 

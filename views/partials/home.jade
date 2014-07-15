@@ -29,6 +29,30 @@ div(ng-init="init()", anim="fadeIn")
                         i(class="fa fa-desktop fa-stack-1x fa-inverse ")
                     h3 User Interface Design
                     h5(style="font-style:italic") User Experience First
+            .row(style="margin-top:80px")
+                .col-xs-10.col-xs-offset-1
+                    hr(class="style-three")
+
+            .row(style="text-align:center;margin-top:50px")
+                h2(style="margin-bottom:50px") Website built with the latest web technologies
+                .col-xs-4(onclick="window.open('https://angularjs.org/', '_blank')")
+                    .panel.panel-default.specific(style="border-radius: 10px;", ng-click="changeMode(0)")
+                        .panel-body
+                            img(src="/images/angular.png", style="width:100px;height:100px")
+                            h4 AngularJS (Front-end)
+
+                .col-xs-4(onclick="window.open('http://sailsjs.org/#!', '_blank')")
+                    .panel.panel-default.specific(style="border-radius: 10px;", ng-click="changeMode(0)")
+                        .panel-body
+                            img(src="/images/sails.png", style="width:250px;height:100px")
+                            h4 SailsJS (Back-end based on NodeJS)
+
+                .col-xs-4(onclick="window.open('http://getbootstrap.com/', '_blank')")
+                    .panel.panel-default.specific(style="border-radius: 10px;", ng-click="changeMode(0)")
+                        .panel-body
+                            img(src="/images/bootstrap.png", style="width:100px;height:100px")
+                            h4 Bootstrap (Built to be responsive)
+
 
 
                 //div(id='canvas', ng-click='draw()')
@@ -95,6 +119,26 @@ div(ng-init="init()", anim="fadeIn")
                 h1 EXPERIENCE
 
             .panel-group(id="accor")
+                .panel.panel-default(ng-repeat="exp in experience")
+                    .panel-heading(style-exp="{{experience.indexOf(exp)}}")
+                            //p(data-toggle="collapse", data-parent="#accor", href="#theone",onclick="return false;") CrashTEst
+                            .row(data-toggle="collapse", data-parent="#accor", href="#the{{experience.indexOf(exp)}}",onclick="return false;")
+                                .col-xs-4(style="text-align:right;")
+                                    h2 {{exp.nom}}
+                                    p(style="font-size:15px") {{exp.duree}}, from {{exp.date_debut}} to {{exp.date_fin}}
+                                .col-xs-6(style="margin-left:30px;border-left:1px dashed white;")
+                                    h2 {{exp.titre}}
+                    div.panel-collapse.collapse(id="the{{experience.indexOf(exp)}}")
+                        .panel-body
+                            h3 {{exp.description}}
+                            h2 Context
+                            p {{exp.contexte}}
+                            br
+                            h2 Skills
+                            p(ng-repeat="skill in exp.skills") {{skill.nom}}
+                            br
+
+            //.panel-group(id="accor")
                 .panel.panel-default
                     .panel-heading(style='background:#778899;color:white;')
                             //p(data-toggle="collapse", data-parent="#accor", href="#theone",onclick="return false;") CrashTEst
@@ -203,25 +247,52 @@ div(ng-init="init()", anim="fadeIn")
                     i(class="fa fa-square fa-stack-2x")
                     i(class="fa fa-coffee fa-stack-1x fa-inverse ")
                 h1 ABOUT
-                .row
-                    .col-xs-4
-                        .view.view-first
-                            img(src="blog.png")
-                            .mask
-                                h2 Hover 1
-                                p TEETETET
-                    .col-xs-4
-                        .view.view-second
-                            img(src="/css/13.jpg")
-                            .mask
-                                h2 Hover 2
-                                p TEETETET
-                    .col-xs-4
-                        .view.view-third
-                            img(src="/css/13.jpg")
-                            .mask
-                                h2 Hover 3
-                                p TEETETET
+
+            .row(style="margin-left:-55px")
+                .col-xs-4(style="margin-right:20px")
+                    .view.view-first
+                        img(src="/images/1.jpg")
+                        .mask
+                            h2 Hover 1
+                            p TEETETET
+                .col-xs-3
+                    .view.view-fourth
+                        img(src="/images/3.jpg")
+                        .mask
+                            h2 Hover 1
+                            p TEETETET
+                .col-xs-3
+                    .view.view-fourth
+                        img(src="/images/2.jpg")
+                        .mask
+                            h2 Hover 1
+                            p TEETETET
+            .row(style="margin-left:-55px")
+                .col-xs-3
+                    .view.view-sixth
+                        img(src="/images/4.jpg")
+                        .mask
+                            h2 Hover 1
+                            p TEETETET
+            .row
+                .col-xs-3
+                    .view.view-first
+                        img(src="/images/1.jpg")
+                        .mask
+                            h2 Hover 2
+                            p TEETETET
+                .col-xs-3
+                    .view.view-third
+                        img(src="/images/1.jpg")
+                        .mask
+                            h2 Hover 3
+                            p TEETETET
+                .col-xs-3
+                    .view.view-fourth
+                        img(src="/images/1.jpg")
+                        .mask
+                            h2 Hover 4
+                            p TEETETET
                 .row
                     .col-xs-4
                         .view.view-fourth
@@ -276,17 +347,17 @@ div(ng-init="init()", anim="fadeIn")
         div(style="text-align:center;margin-bottom:50px;margin-top:30px")
             h1(style="text-decoration:underline;") Contact
         .row(style="text-align:center")
-            .col-xs-3.contact.grow(onclick='window.location.href= "mailto:beardpierre@gmail.com?subject=Info%Or%Meeting";')
+            .col-xs-3.contact.grow(onclick="window.open('mailto:beardpierre@gmail.com?subject=Info%Or%Meeting', '_blank')")
                 i(class="fa fa-paper-plane-o fa-3x fa-inverse ")
                 h5 beardpierre@gmail.com
             .col-xs-3.contact.grow
                 i(class="fa fa-phone fa-3x fa-inverse ")
                 h5 (+33)6.33.37.08.52
                 h5 French Number
-            .col-xs-3.contact.grow(onclick='window.location.href="http://github.com/PBRT";')
+            .col-xs-3.contact.grow(onclick="window.open('http://github.com/PBRT', '_blank')")
                 i(class="fa fa-github fa-3x fa-inverse ")
                 h5 @PBRT
-            .col-xs-3.contact.grow(onclick='window.location.href="http://fr.linkedin.com/pub/pierre-beard/62/690/4b0/";')
+            .col-xs-3.contact.grow(onclick="window.open('http://fr.linkedin.com/pub/pierre-beard/62/690/4b0/', '_blank')")
                 i(class="fa fa-linkedin-square fa-3x fa-inverse ")
                 h5 LinkedIn
 

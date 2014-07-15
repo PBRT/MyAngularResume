@@ -168,8 +168,22 @@ hr.style-two {
     background: white;
 }
 
+
+hr.style-three {
+    border: 0;
+    height: 2px;
+    background: #778899;
+}
+
 .specific:hover{
     background: lightblue;
     color:#ffffff;
 }
 
+.experienceStyle1 {
+    background:#778899;
+    color:white;
+}
+.experienceStyle2 {
+    background:#fff
+}

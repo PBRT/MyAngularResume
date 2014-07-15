@@ -100,16 +100,21 @@ directives.directive('clickOn', function(){
 })
 
 //Permet la modification des letters sur hover
-directives.directive('letter', function($rootScope){
+directives.directive('styleExp', function($compile){
     return function(scope,elm,attr){
+        console.log(attr.styleExp)
+        if(attr.styleExp) {
 
-
-        elm.bind('mouseenter', function(){
-
-        })
-        elm.bind('mouseleave', function(){
-
-        })
+            var n = parseFloat(attr.styleExp)
+            //Pair
+            if (n % 2 == 0) {
+                //elm.addClass('{background:#778899;color:white;}')
+                elm.css('background', '#778899')
+                elm.css('color', 'white')
+            }else{
+                elm.css('background', '#fff')
+            }
+        }
     }
 })
 

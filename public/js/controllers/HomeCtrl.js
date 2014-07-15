@@ -16,12 +16,21 @@ app.controller("HomeCtrl", function($scope, resume){
     $scope.skillOther= [];
 
     $scope.init = function() {
+
         $scope.home = "Front-End Developer"
         $scope.homeDescription = "Experienced since one year in front-end development"
 
+        //Recupération des données (JSON)
+        resume.fillValues();
+        $scope.experience = resume.getExperience();
+        $scope.education = resume.getEducation();
+        $scope.projets = resume.getProjets();
+        $scope.skills = resume.getSkills();
+
+        console.log($scope.experience.indexOf($scope.experience[0]))
 
         //Recupération des données
-        resume.getItems(function () {
+        /*resume.getItems(function () {
             $scope.experience = resume.getExperience();
             $scope.education = resume.getEducation();
             $scope.projets = resume.getProjets();
@@ -40,7 +49,7 @@ app.controller("HomeCtrl", function($scope, resume){
             }
 
 
-        });
+        });*/
     }
 
     $scope.changeMode = function(val){

@@ -66,6 +66,11 @@ h1,h2,h5,a,p {
     font-size:100px;
 }
 
+.imgShadow{
+    box-shadow: 7px 7px 7px #778899;
+    -webkit-box-shadow: 7px 7px 7px #778899;
+    -moz-box-shadow: 7px 7px 7px #778899;
+}
 
 .rect
 {
@@ -189,4 +194,18 @@ hr.style-three {
 }
 .experienceStyle2 {
     background:#fff
+}
+
+.rotateImg {
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg); /* IE 9 */
+    -webkit-transform:rotate(90deg); /* Opera, Chrome, and Safari */
+}
+
+#map-canvas {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px
 }

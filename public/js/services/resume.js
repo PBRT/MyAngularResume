@@ -12,17 +12,20 @@ services.factory("resume", function(Data){
     var education = [];
     var projets = [];
     var about = [];
+    var places = [];
+    var travels =[];
 
     return {
 
         fillValues : function(){
 
             experience=data.experience;
-            console.log(experience)
             skills=data.skills;
             education=data.education;
             projets=data.projets;
             about=data.about;
+            places= data.places;
+            travels=data.travels;
         },
 
         //Chargement de l'ensemble des items
@@ -123,6 +126,18 @@ services.factory("resume", function(Data){
         },
         resetSkills : function(val){
             skills = [];
+        },
+        getPlaces : function(){
+            return places;
+        },
+        setPlaces : function(val){
+            places=val;
+        },
+        getTravels : function(){
+            return travels;
+        },
+        setTravels : function(val){
+            travels=val;
         }
 
     }

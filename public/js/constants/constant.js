@@ -101,6 +101,43 @@ constants.constant( 'Data',{
     ],
     education: [],
     projets: [],
-    about: []
+    about: [],
+    places: [
+
+        //Studies
+        {nom : "I.N.S.A. Toulouse", website :"http://www.insa-toulouse.fr/fr/index.html",type : "Studies", lat : 43.569911, lng : 1.467923},
+        {nom : "Linköping University",website :"http://www.liu.se/?l=en", type : "Studies", lat : 58.398002, lng : 15.576232},
+
+        //Work
+        {nom : "AERODRONES Bidart", website :"http://www.aerodrones.com/", type : "Work", lat : 43.447698, lng : -1.555287},
+        {nom : "INFOTEL Conseil", website :"http://www.infotel.com/", type : "Work", lat : 43.639800, lng : 1.368012},
+        {nom : "DAHER-SOCATA", website :"http://www.daher.com/", type : "Work", lat : 43.185786, lng : 0.008685},
+        {nom : "Polyclinique de l'ORMEAU", website :"http://www.polyclinique-ormeau.fr/", type : "Work", lat : 43.225237, lng : 0.077135},
+
+        //Travels
+        {nom : "Quebec", website :"", type : "Travel", lat : 43.447698, lng : -1.555287},
+        {nom : "Montreal", website :"", type : "Travel", lat : 43.447698, lng : -1.555287},
+        {nom : "Calgary", website :"", type : "Travel", lat : 43.447698, lng : -1.555287},
+        {nom : "Vancouver", website :"", type : "Travel", lat : 43.447698, lng : -1.555287}
+
+    ],
+    travels : [
+
+        //Canada 1
+        {nom : "Canada", points : [
+            {lat : 40.777356, lng :-74.190577},
+            {lat : 42.282324, lng :-71.059474},
+            {lat : 44.459877, lng :-69.028216},
+            {lat : 45.578118, lng :-73.664446},
+            {lat : 45.454947, lng :-75.685931},
+            {lat : 43.718134,lng : -79.509173},
+            {lat : 40.284990, lng :-76.666521},
+            {lat : 40.005404, lng :-74.946110},
+            {lat : 40.758578, lng :-73.979313}
+
+        ]}
+
+
+    ]
 
 });

@@ -121,31 +121,6 @@ directives.directive('styleExp', function($compile){
 //Dediée aux transitions entre les pages
 directives.directive('partialTransition', function($rootScope){
     return function(scope,elm,attrs){
-
-       /* scope.$watch('currentRoute', function(val) {
-            elm.addClass('animated slideInRight');
-        });*/
-            /*console.log($rootScope.currentRoute)*/
-            //console.log($rootScope.oldRoute)
-
-            //On va vers ce partiel
-           /*if($rootScope.currentRoute==attrs.partialTransition){
-                //console.log("Va ver")
-                elm.addClass('animated slideInRight');
-            }
-            //On vient de ce partiel
-          /* if($rootScope.oldRoute==attrs.partialTransition){
-                console.log("Viens de ")
-                elm.addClass('animated fadeOut');
-            }*/
-
-            /*elm.on('webkitAnimationEnd', function(){
-                elm.addClass('animated slideInUp');
-            })*/
-
-        /*})*/
-
-
     }
 })
 

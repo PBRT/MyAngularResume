@@ -125,6 +125,8 @@ app.controller("HomeCtrl", function($scope, resume){
             icon="http://maps.google.com/mapfiles/ms/icons/red-dot.png"
         if(type=="Work")
             icon="http://maps.google.com/mapfiles/ms/icons/purple-dot.png"
+        if(type=="Holidays")
+            icon="http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
 
         var marker = new google.maps.Marker({
             position: LatLng,
@@ -146,7 +148,7 @@ app.controller("HomeCtrl", function($scope, resume){
 
     //Create Travel
     $scope.makeTravel = function(val){
-        console.log(val)
+
         var directionsDisplay= new google.maps.DirectionsRenderer({polylineOptions: {strokeColor: "red"}});
         var directionsService = new google.maps.DirectionsService();
         directionsDisplay.setMap(map);
@@ -169,7 +171,7 @@ app.controller("HomeCtrl", function($scope, resume){
             travelMode: google.maps.TravelMode.DRIVING,
             waypoints: wp
         };
-
+        console.log(wp)
         directionsService.route(request, function(response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);

@@ -114,17 +114,35 @@ constants.constant( 'Data',{
         {nom : "DAHER-SOCATA", website :"http://www.daher.com/", type : "Work", lat : 43.185786, lng : 0.008685},
         {nom : "Polyclinique de l'ORMEAU", website :"http://www.polyclinique-ormeau.fr/", type : "Work", lat : 43.225237, lng : 0.077135},
 
-        //Travels
-        {nom : "Quebec", website :"", type : "Travel", lat : 43.447698, lng : -1.555287},
-        {nom : "Montreal", website :"", type : "Travel", lat : 43.447698, lng : -1.555287},
-        {nom : "Calgary", website :"", type : "Travel", lat : 43.447698, lng : -1.555287},
-        {nom : "Vancouver", website :"", type : "Travel", lat : 43.447698, lng : -1.555287}
+        //Holidays
+        {nom : "Pragues", website :"", type : "Holidays", lat : 50.248232, lng : 14.290400},
+        {nom : "Amsterdam", website :"", type : "Holidays", lat : 52.376579,  lng : 4.842158},
+        {nom : "Stockholm", website :"", type : "Holidays", lat : 59.330520, lng :  18.061017},
+        {nom : "Oslo", website :"", type : "Holidays", lat : 59.915030,  lng : 10.742545},
+        {nom : "Munich", website :"", type : "Holidays", lat : 48.133148, lng :  11.580975},
+        {nom : "Copenhague", website :"", type : "Holidays", lat : 55.679108, lng :  12.578348},
+        {nom : "Roma", website :"", type : "Holidays", lat : 41.866877,  lng : 12.488619},
+        {nom : "Athenes", website :"", type : "Holidays", lat : 37.984546, lng : 23.729070},
+        {nom : "Santorin", website :"", type : "Holidays", lat : 36.397620,  lng : 25.461486},
+        {nom : "Madrid", website :"", type : "Holidays", lat : 40.417703,  lng : -3.710436},
+        {nom : "Minorque", website :"", type : "Holidays", lat : 39.961101,  lng : 4.109410},
+        {nom : "Lisbonne", website :"", type : "Holidays", lat : 38.719924 ,lng : -9.135828},
+        {nom : "Vienne", website :"", type : "Holidays", lat : 48.209069,   lng : 16.389610},
+        {nom : "Berne", website :"", type : "Holidays", lat : 46.948284,lng : 7.444652 },
+        {nom : "Paris", website :"", type : "Holidays", lat : 48.856318,  lng : 2.349978},
+        {nom : "Zermatt", website :"", type : "Holidays", lat : 46.022181 ,lng : 7.744005},
+        {nom : "Wengen", website :"", type : "Holidays", lat : 46.605751,    lng : 7.921083},
+        {nom : "Milan", website :"", type : "Holidays", lat : 45.465744,lng : 9.187345},
+        {nom : "Kitzbuhel", website :"", type : "Holidays", lat : 47.444716,lng : 12.393044},
+        {nom : "Casablanca", website :"", type : "Holidays", lat : 33.586062,lng : -7.614148},
+        {nom : "Quebec City", website :"", type : "Holidays", lat : 47.099572,lng :  -71.510314}
+
 
     ],
     travels : [
 
         //Canada 1
-        {nom : "Canada", points : [
+        {nom : " East Canada", points : [
             {lat : 40.777356, lng :-74.190577},
             {lat : 42.282324, lng :-71.059474},
             {lat : 44.459877, lng :-69.028216},
@@ -134,6 +152,30 @@ constants.constant( 'Data',{
             {lat : 40.284990, lng :-76.666521},
             {lat : 40.005404, lng :-74.946110},
             {lat : 40.758578, lng :-73.979313}
+
+        ]} ,
+
+        //Canada 1
+        {nom : " USA Canada", points : [
+            {lat : 40.758797, lng : -111.892333},
+            {lat:43.480405, lng :-110.763753},
+            {lat : 44.385556, lng : -110.608306},
+            {lat : 46.655886,  lng :-112.058501},
+            {lat : 51.293866, lng :-114.065744},
+            {lat : 52.700683, lng :-117.867013},
+            {lat : 49.270595, lng :-123.196066 },
+            {lat : 47.697853, lng: -122.416037}
+
+        ]},
+        //Canada 1
+        {nom : "USA", points : [
+            {lat :36.171298,lng : -115.138608},
+            {lat :36.347919,lng : -117.126446}
+            /*{lat :37.927939, lng :-118.527423},
+            {lat :37.006194, lng : -110.174959},
+            {lat :37.927939,lng : -121.999102},
+            {lat :37.565062,lng : -111.602307},
+            {lat :5.729780,lng : -112.111407}*/
 
         ]}
 

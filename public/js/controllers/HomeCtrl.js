@@ -20,6 +20,9 @@ app.controller("HomeCtrl", function($scope, resume){
     $scope.skillLib= [];
     $scope.skillTools= [];
 
+    $scope.markers =[];
+    $scope.directions=[];
+
     var map;
     var info = [];
 
@@ -27,7 +30,7 @@ app.controller("HomeCtrl", function($scope, resume){
         console.log("oooo")
         var myLatlng = new google.maps.LatLng(43.596604,1.427908);
         var mapOptions = {
-            zoom: 3,
+            zoom: 4,
             center: myLatlng
         }
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -132,7 +135,8 @@ app.controller("HomeCtrl", function($scope, resume){
             position: LatLng,
             map: map,
             title: 'Hello World!',
-            icon: icon
+            icon: icon,
+            animation: google.maps.Animation.DROP
         });
         var infowindow = new google.maps.InfoWindow({
             content: "<style>.yolo:hover{text-decoration:underline}</style><div><h4 style=\"text-align: center\">"+nom+"</h4><p class=\"yolo\" style=\"{text-color:#fff}\" onclick=\"window.open('"+website+"', '_blank')\")>"+website+"</p></div>"
@@ -144,12 +148,14 @@ app.controller("HomeCtrl", function($scope, resume){
             infowindow.open(map,marker);
 
         });
+
+        $scope.markers.push({type : type,marker : marker})
     }
 
     //Create Travel
     $scope.makeTravel = function(val){
 
-        var directionsDisplay= new google.maps.DirectionsRenderer({polylineOptions: {strokeColor: "red"}});
+        var directionsDisplay= new google.maps.DirectionsRenderer({polylineOptions: {strokeColor: "green"}, suppressMarkers: true,preserveViewport: true});
         var directionsService = new google.maps.DirectionsService();
         directionsDisplay.setMap(map);
 
@@ -165,20 +171,96 @@ app.controller("HomeCtrl", function($scope, resume){
             wp.push({location :pos, stopover: false});
         }
 
+        var icon_start="images/letter_s.png";
+        var icon_end="images/letter_e.png";
+
+        var ms;
+        var me;
+
         var request = {
             origin:start,
             destination:end,
-            travelMode: google.maps.TravelMode.DRIVING,
+            travelMode: google.maps.TravelMode.WALKING,
             waypoints: wp
         };
-        console.log(wp)
         directionsService.route(request, function(response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
+                var leg = response.routes[ 0 ].legs[ 0 ];
+                ms=makeMarker( leg.start_location,  "title" , icon_start);
+                me=makeMarker( leg.end_location, 'title' ,icon_end);
+                $scope.directions.push({direction:directionsDisplay,ms:ms,me:me})
             }else {
                 console.log("FAIL")
             }
         });
+
+
     }
 
+    function makeMarker( position,  title ,icon) {
+       var m= new google.maps.Marker({
+            position: position,
+            map: map,
+            icon: icon,
+            title: title
+        });
+        return m;
+
+    }
+
+    //Supprime les marqueurs d'une type
+    $scope.removeMarkers=function(type){
+
+        if(type!="Travels") {
+            for (var i = 0; i < $scope.markers.length; i++) {
+                if ($scope.markers[i].type == type) {
+                    $scope.markers[i].marker.setMap(null);
+                }
+            }
+        }else{
+            for (var i = 0; i < $scope.directions.length; i++) {
+                $scope.directions[i].direction.setMap(null);
+                $scope.directions[i].ms.setMap(null);
+                $scope.directions[i].me.setMap(null);
+            }
+        }
+    }
+
+    //Replace les marqueurs d'une type
+    $scope.replaceMarkers=function(type){
+        if(type!="Travels"){
+            for(var i=0; i<$scope.markers.length;i++){
+                if($scope.markers[i].type==type){
+                    $scope.markers[i].marker.setMap(map);
+                    $scope.markers[i].marker.setAnimation(google.maps.Animation.DROP);
+                }
+            }
+        }else{
+            for (var i = 0; i < $scope.directions.length; i++) {
+                $scope.directions[i].direction.setMap(map);
+                $scope.directions[i].ms.setMap(map);
+                $scope.directions[i].me.setMap(map);
+            }
+        }
+    }
+
+
+    //Center map on the place
+    $scope.centerMap = function(data){
+        $scope.selected="";
+        map.setZoom(5)
+        map.setCenter(new google.maps.LatLng(data.lat, data.lng));
+
+        //Ouverture de l'infobulle
+        for(var i=0; i<$scope.markers[i].length;i++){
+
+            if($scope.markers[i].marker.getPosition().lat()==data.lat && $scope.markers[i].marker.getPosition().lng()==data.lng)
+                google.maps.event.trigger($scope.markers[i], 'click');
+        }
+
+
+
+
+    }
 })

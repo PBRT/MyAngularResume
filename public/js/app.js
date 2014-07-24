@@ -10,6 +10,7 @@ angular.module('myApp', [
   'myApp.constants',
   'myApp.resources',
   'duScroll',
+  'ui.bootstrap',
   // 3rd party dependencies
   'btford.socket-io'
 

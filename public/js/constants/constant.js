@@ -135,8 +135,15 @@ constants.constant( 'Data',{
         {nom : "Milan", website :"", type : "Holidays", lat : 45.465744,lng : 9.187345},
         {nom : "Kitzbuhel", website :"", type : "Holidays", lat : 47.444716,lng : 12.393044},
         {nom : "Casablanca", website :"", type : "Holidays", lat : 33.586062,lng : -7.614148},
-        {nom : "Quebec City", website :"", type : "Holidays", lat : 47.099572,lng :  -71.510314}
-
+        {nom : "Quebec City", website :"", type : "Holidays", lat : 47.099572,lng :  -71.510314},
+        {nom : "Bangkok", website :"", type : "Holidays", lat : 13.734272,lng : 100.533547},
+        {nom : "Ko Tao", website :"", type : "Holidays", lat : 10.097705,lng :  99.840298},
+        {nom : "Ko Phangan", website :"", type : "Holidays", lat : 9.736539, lng : 100.012390},
+        {nom : "Pointe-a-pitre", website :"", type : "Holidays", lat :16.240349,lng :   -61.536527},
+        {nom : "Les Saintes", website :"", type : "Holidays", lat :15.865727, lng :   -61.583522},
+        {nom : "Marie Galante", website :"", type : "Holidays", lat :15.929121,lng : -61.257633},
+        {nom : "Folegandros", website :"", type : "Holidays", lat :36.625225, lng :  24.922657},
+        {nom : "Crete", website :"", type : "Holidays", lat :35.357027,lng :  25.141166}
 
     ],
     travels : [
@@ -167,18 +174,33 @@ constants.constant( 'Data',{
             {lat : 47.697853, lng: -122.416037}
 
         ]},
-        //Canada 1
+        //USA
         {nom : "USA", points : [
-            {lat :36.171298,lng : -115.138608},
-            {lat :36.347919,lng : -117.126446}
-            /*{lat :37.927939, lng :-118.527423},
-            {lat :37.006194, lng : -110.174959},
-            {lat :37.927939,lng : -121.999102},
-            {lat :37.565062,lng : -111.602307},
-            {lat :5.729780,lng : -112.111407}*/
+            {lat : 36.169635,  lng : -115.158521},
+            {lat:  36.679259, lng : -117.053165},
+            {lat : 37.927939, lng :-118.527423},
+            {lat :37.777797, lng : -122.426897},
+            {lat :39.399967, lng : -116.808439},
+            {lat :37.619622, lng :-112.174191},
+            {lat :37.458668,lng : -110.715841},
+            {lat :36.991018,lng : -109.842391},
+            {lat : 36.053053, lng :-112.105693},
+            {lat : 36.169635,  lng : -115.158521}
 
+        ]},
+
+        {nom : "Vietnam", points : [
+            {lat : 21.034473,   lng : 105.831385},
+            {lat:  15.880334, lng :  108.336036},
+            {lat :16.072553, lng:108.197977},
+            {lat :16.454544, lng :107.584040},
+            {lat :16.908718, lng :107.188189},
+            {lat :17.079318, lng: 107.112880},
+            {lat :17.471230, lng:106.621921},
+            {lat :20.261026,lng: 105.969914},
+            {lat :20.844917,lng: 106.697576},
+            {lat : 21.034473,   lng : 105.831385}
         ]}
-
 
     ]
 

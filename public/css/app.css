@@ -209,3 +209,15 @@ hr.style-three {
     margin: 0px;
     padding: 0px
 }
+
+.littleClass{
+    background: lightgray;
+}
+
+.typeahead li{
+    width: 300px;
+}
+
+.dropdown-menu {
+    width: 90%;
+}

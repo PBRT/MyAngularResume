@@ -282,19 +282,41 @@ div(ng-init="init()", anim="fadeIn")
                         hr(class="style-three")
                     .col-xs-2
                         p(style="text-align:center;font-size:25px") Places
+                        p(style="text-align:center;font-size:13px;font-style:italic") Click on a marker type to hide it
                     .col-xs-5
                         hr(class="style-three")
                 .row(style="text-align:center;margin-bottom:20px")
-                    .col-xs-3
                     .col-xs-2
-                        p Travels
-                        img(src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png")
                     .col-xs-2
-                        p Work
-                        img(src="http://maps.google.com/mapfiles/ms/icons/purple-dot.png")
+                        .panel.panel-default.specific(style="border-radius: 5px;", selected-mode="Holidays")
+                            .panel-body
+                                p City Holidays
+                                img(src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png")
                     .col-xs-2
-                        p Studies
-                        img(src="http://maps.google.com/mapfiles/ms/icons/red-dot.png")
+                        .panel.panel-default.specific(style="border-radius: 5px;", selected-mode="Work")
+                            .panel-body
+                                p Work
+                                img(src="http://maps.google.com/mapfiles/ms/icons/purple-dot.png")
+                    .col-xs-2
+                        .panel.panel-default.specific(style="border-radius: 5px;", selected-mode="Studies")
+                            .panel-body
+                                p Studies
+                                img(src="http://maps.google.com/mapfiles/ms/icons/red-dot.png")
+                    .col-xs-2
+                        .panel.panel-default.specific(style="border-radius: 5px;", selected-mode="Travels")
+                            .panel-body
+                                p Travels
+                                img(src="images/letter_s.png")
+                                img(src="images/letter_e.png")
+
+                .row(style="margin-bottom:30px")
+                    .col-xs-10.col-xs-offset-1
+                        .form-group
+                            .input-group
+                                span.input-group-addon
+                                    i(class="fa fa-search")
+                                input(type="text", placeholder="Find a location..." ,typeahead-on-select="centerMap($item)", typeahead-template-url="customTemplate.html",ng-model="selected", typeahead="state for state in places | filter:$viewValue | limitTo:8", class="form-control")
+
 
 
                 div(id="map-canvas")
@@ -330,3 +352,8 @@ div(ng-init="init()", anim="fadeIn")
                 i(class="fa fa-linkedin-square fa-3x fa-inverse ")
                 h5 LinkedIn
 
+script(type="text/ng-template", id="customTemplate.html")
+    a()
+        p
+            p {{match.model.nom}}
+                i.pull-left(icone-search="{{match.model.type}}", style="margin-right:10%; margin-bottom:4px")

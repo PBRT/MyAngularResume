@@ -124,6 +124,50 @@ directives.directive('partialTransition', function($rootScope){
     }
 })
 
+//Permet d'activer le click sur une image
+directives.directive('selectedMode', function(){
+    return function(scope,elm, attrs){
+
+        var first=false;
+        var type=attrs.selectedMode;
+        elm.bind('click', function(){
+
+            //Premier click
+            if(first==false) {
+                scope.$apply(function(){
+                    first = true;
+                    elm.addClass('littleClass')
+                    elm.removeClass('specific')
+                    scope.removeMarkers(type);
+                });
+            }
+            //Second click
+            else {
+                scope.$apply(function(){
+                    first = false;
+                    elm.removeClass('littleClass')
+                    elm.addClass('specific')
+                    scope.replaceMarkers(type)
+                })
+            }
+        })
+    }
+})
+
+
+//Dediée aux icone dans la barre de recherche
+directives.directive('iconeSearch', function($rootScope){
+    return function(scope,elm,attrs){
+        if(attrs.iconeSearch=="Holidays"){
+            elm.addClass('fa fa-camera-retro')
+        }else if(attrs.iconeSearch=="Work"){
+            elm.addClass('fa fa-briefcase')
+        }else if(attrs.iconeSearch=="Studies"){
+            elm.addClass('fa fa-mortar-board')
+        }
+
+    }
+})
 
 
 

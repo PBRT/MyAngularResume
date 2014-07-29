@@ -1,6 +1,6 @@
 div(ng-init="init()", anim="fadeIn")
 
-    div(style="background: url(images/Travel/tr1.JPG) no-repeat center center fixed;-webkit-background-size: cover;background-size:cover;-moz-background-size:cover")
+    div(style="background: url(images/Travel/tr15.JPG) no-repeat center center fixed;-webkit-background-size: cover;background-size:cover;-moz-background-size:cover")
         section.box(id="home")
             div(style="text-align:center;width:100%")
 
@@ -9,6 +9,17 @@ div(ng-init="init()", anim="fadeIn")
                         i(class="fa fa-bolt fa-stack-1x fa-inverse ")
                     h1 {{home}}
                     h4(style="font-style:italic") {{homeDescription}}
+
+            .row(style="margin-top:80px")
+                .col-xs-1.col-xs-offset-2
+                    i(class="fa fa-quote-left fa-5x ")
+                .col-xs-8
+                    h1(style="font-size:60px") Software do it better
+                .col-xs-1
+                    i(class="fa fa-quote-right fa-5x ")
+            //.row(style="margin-top:-10px")
+                .col-xs-8.col-xs-offset-3
+
 
             .row(style="text-align:center;margin-top:80px")
                 .col-xs-4
@@ -52,6 +63,38 @@ div(ng-init="init()", anim="fadeIn")
                         .panel-body
                             img(src="/images/Icons/angular.png", style="width:100px;height:100px")
                             h4 AngularJS (Front-end)
+
+            .row(style="text-align:center;margin-top:50px")
+                .col-xs-2(onclick="window.open('http://www.mongodb.org/', '_blank')")
+                    .panel.panel-default.specific(style="border-radius: 15px;", ng-click="changeMode(0)")
+                        .panel-body
+                            img(src="/images/Icons/mongodb.png", style="width:120px;height:90px;margin-bottom:10px")
+                            h5 MongoDB
+                .col-xs-2(onclick="window.open('http://nodejs.org/', '_blank')")
+                    .panel.panel-default.specific(style="border-radius: 15px;", ng-click="changeMode(0)")
+                        .panel-body
+                            img(src="/images/Icons/nodejs.png", style="width:120px;height:90px;margin-bottom:10px")
+                            h5 NodeJS
+                .col-xs-2(onclick="window.open('https://developers.google.com/maps/?hl=FR', '_blank')")
+                    .panel.panel-default.specific(style="border-radius: 15px;", ng-click="changeMode(0)")
+                        .panel-body
+                            img(src="/images/Icons/gmap.jpg", style="width:120px;height:90px;margin-bottom:10px")
+                            h5 Google Maps
+                .col-xs-2(onclick="window.open('http://www.w3.org/TR/html5/', '_blank')")
+                    .panel.panel-default.specific(style="border-radius: 15px;", ng-click="changeMode(0)")
+                        .panel-body
+                            img(src="/images/Icons/html5.png", style="width:120px;height:90px;margin-bottom:10px")
+                            h5 HTML5
+                .col-xs-2(onclick="window.open('http://www.w3schools.com/css/css3_intro.asp', '_blank')")
+                    .panel.panel-default.specific(style="border-radius: 15px;", ng-click="changeMode(0)")
+                        .panel-body
+                            img(src="/images/Icons/css3.png", style="width:120px;height:90px;margin-bottom:10px")
+                            h5 CSS3
+                .col-xs-2(onclick="window.open('http://gruntjs.com/', '_blank')")
+                    .panel.panel-default.specific(style="border-radius: 15px;", ng-click="changeMode(0)")
+                        .panel-body
+                            img(src="/images/Icons/grunt.png", style="width:120px;height:90px;margin-bottom:10px")
+                            h5 Grunt
 
 
         .emptyBox(style="height:500px;background:inherit")

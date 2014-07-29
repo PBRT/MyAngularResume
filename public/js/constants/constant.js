@@ -1,5 +1,3 @@
-//Declaration de la variable de constante globale de l'application
-var constants = angular.module('myApp.constants', [])
 
 constants.constant( 'Data',{
 

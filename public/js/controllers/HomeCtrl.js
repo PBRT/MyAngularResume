@@ -1,4 +1,4 @@
-app.controller("HomeCtrl", function($scope, resume){
+app.controller("HomeCtrl",['$scope', 'resume', function($scope, resume){
 
     //Affichage education
     $scope.mode=0;
@@ -44,8 +44,6 @@ app.controller("HomeCtrl", function($scope, resume){
     }
 
 
-   // google.maps.event.addDomListener(window, 'load', initialize);
-
     $scope.init = function() {
 
         $scope.home = "Front-End Developer"
@@ -78,6 +76,7 @@ app.controller("HomeCtrl", function($scope, resume){
                 $scope.skillTools.push($scope.skills[it])
         }
 
+        //On initialise la carte
         initialize();
 
 
@@ -125,16 +124,15 @@ app.controller("HomeCtrl", function($scope, resume){
 
         //Set color marker depending of type
         if(type=="Studies")
-            icon="http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+            icon="images/Icons/red-dot.png"
         if(type=="Work")
-            icon="http://maps.google.com/mapfiles/ms/icons/purple-dot.png"
+            icon="images/Icons/purple-dot.png"
         if(type=="Holidays")
-            icon="http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+            icon="images/Icons/blue-dot.png"
 
         var marker = new google.maps.Marker({
             position: LatLng,
             map: map,
-            title: 'Hello World!',
             icon: icon,
             animation: google.maps.Animation.DROP
         });
@@ -171,8 +169,8 @@ app.controller("HomeCtrl", function($scope, resume){
             wp.push({location :pos, stopover: false});
         }
 
-        var icon_start="images/letter_s.png";
-        var icon_end="images/letter_e.png";
+        var icon_start="images/Icons/letter_s.png";
+        var icon_end="images/Icons/letter_e.png";
 
         var ms;
         var me;
@@ -263,4 +261,4 @@ app.controller("HomeCtrl", function($scope, resume){
 
 
     }
-})
+}])

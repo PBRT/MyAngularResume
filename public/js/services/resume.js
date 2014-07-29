@@ -1,9 +1,7 @@
 'use strict';
-//Declaration de la variable de service globale de l'application
-var services = angular.module("myApp.services", []);
 
 //Service assurant la gestion des données globale à l'application
-services.factory("resume", function(Data){
+services.factory("resume", ['Data',function(Data){
 
     var data = Data;
 
@@ -142,4 +140,4 @@ services.factory("resume", function(Data){
 
     }
 
-});
+}]);

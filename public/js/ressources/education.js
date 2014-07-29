@@ -1,7 +1,4 @@
-//Declaration de la variable de ressource globale de l'application
-var resources = angular.module('myApp.resources', ["ngResource"]);
-
-resources.factory("Education", function ($resource, Server) {
+resources.factory("Education", ['$resource','Server',function ($resource, Server) {
     return $resource(
             Server.addr + "/education/:id",
         {id: "@id" },
@@ -9,4 +6,4 @@ resources.factory("Education", function ($resource, Server) {
             "update": {method: "PUT", url: Server.addr + "/education/:id"}
         }
     );
-});
+}]);

@@ -1,9 +1,7 @@
 'use strict';
-//Declaration de la variable de controlleurs globale de l'application
-var app = angular.module('myApp.controllers', []);
 
 //Controller qui gère le layout global de l'application
-app.controller('MainCtrl', function ($rootScope,$scope,$location, socket,$document){
+app.controller('MainCtrl', ['$rootScope', '$scope', '$location', function ($rootScope,$scope,$location){
 
 
     $scope.endEnter=0;
@@ -14,26 +12,18 @@ app.controller('MainCtrl', function ($rootScope,$scope,$location, socket,$docume
     })
 
 
-    $scope.toTheTop = function() {
-        $document.scrollTop(0, 5000).then(function() {
-            console && console.log('You just scrolled to the top!');
-        });
-    }
-    var section2 = angular.element(document.getElementById('section-2'));
-    $scope.toSection2 = function() {
-        $document.scrollTo(section2, 0, 1000);
-    }
-
     $scope.displayHome=false;
     $scope.start=0;
     $scope.itemx=0;
 
-    $scope.$on('$routeChangeStart', function(evt,newRoute,currentRoute) {
+    $scope.$on('$routeChangeStart', function(evt,newRoute) {
         if(newRoute) {
-            if (newRoute.templateUrl != "partials/main")
+            if (newRoute.templateUrl != "partials/main") {
                 $scope.displayHome = true;
+            }
             else if (newRoute.templateUrl == "partials/main") {
                 $scope.displayHome = false;
+                $scope.itemx=0;
             }
         }
 
@@ -61,15 +51,4 @@ app.controller('MainCtrl', function ($rootScope,$scope,$location, socket,$docume
 
 
 
-
-
-    //Exemple de socket interessant
-    /*socket.on('send:name', function (data) {
-        $scope.name = data.name;
-    });*/
-
-
-
-
-
-});
+}]);

@@ -1,4 +1,4 @@
-resources.factory("Skills", function ($resource, Server) {
+resources.factory("Skills",  ['$resource','Server',function ($resource, Server) {
     return $resource(
             Server.addr + "/skills",
         {id: "@id" },
@@ -6,4 +6,4 @@ resources.factory("Skills", function ($resource, Server) {
             "query": {method: "GET", url: Server.addr + "/skills", isArray: true}
         }
     );
-});
+}]);

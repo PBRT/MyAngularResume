@@ -1,0 +1,59 @@
+module.exports = function(grunt) {
+
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+
+    concat: {
+      options: {
+        separator: ';'
+      },
+      dist: {
+        //the files to concatenate
+        src: [
+          'public/js/libs/underscore.js',
+          'public/js/libs/*.js',
+          'public/js/app.js',
+          'public/js/controllers/*.js',
+          'public/js/directives/*.js',
+          'public/js/filters/*.js',
+          'public/js/resources/*.js',
+          'public/js/services/*.js'
+        ],
+
+        //the location of the resulting js file
+        dest: 'public/js/dist/app.js'
+      }
+    },
+
+    uglify: {
+      options: {
+        //banner inserted at the top of the output
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+      },
+      dist: {
+        files: {
+          'public/js/dist/app.min.js': ['<%= concat.dist.dest %>']
+        }
+      }
+    },
+
+    watch: {
+      scripts: {
+        files: [
+          'public/js/app.js',
+          'public/js/**/*.js'
+        ],
+        tasks: ['concat', 'uglify'],
+        options: {
+          spawn: false
+        }
+      }
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+
+  grunt.registerTask('build', ['concat', 'uglify']);
+};

@@ -24,6 +24,7 @@ module.exports = function(grunt) {
                 'public/libs/angular-resource.min.js',
                 'public/libs/angular-scroll.js',
                 'public/libs/ui-bootstrap-tpls-0.11.0.min.js',
+                'public/libs/idangerous.swiper-2.1.min.js',
 
                 //Application
                 'public/js/app.js',
@@ -49,6 +50,8 @@ module.exports = function(grunt) {
                 'public/css/animate.css',
                 //Animation Hover
                 'public/css/hoverLib.css',
+                //Swiper
+                'public/css/idangerous.swiper.css',
                 //Application Globale
                 'public/css/app.css'
             ],

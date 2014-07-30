@@ -150,3 +150,9 @@ h1,h2,h5,a,p {
     background: lightgray;
 }
 
+.arrondie2 {
+    border:2px solid black;
+    -moz-border-radius:7px;
+    -webkit-border-radius:7px;
+    border-radius:7px;
+}

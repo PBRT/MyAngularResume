@@ -198,7 +198,22 @@ div(ng-init="init()", anim="fadeIn")
                     i(class="fa fa-square fa-stack-2x")
                     i(class="fa fa-keyboard-o fa-stack-1x fa-inverse ")
                 h1 COMPUTER SKILLS
-            h2(style="margin-bottom:20px") Computer Skills
+
+            .device
+                a.arrow-left
+                a.arrow-right
+                .swiper-container
+                    .swiper-wrapper
+                        .swiper-slide
+                            img(src="images/Icons/grunt.png")
+                        .swiper-slide
+                            img(src="images/Icons/sails.png")
+                        .swiper-slide
+                            .content-slide
+                                p.title Test
+                                p Another stuff
+                .pagination
+
             h4 Langages
             hr(class="style-three")
             .row

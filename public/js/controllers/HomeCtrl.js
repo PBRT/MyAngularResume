@@ -1,4 +1,4 @@
-app.controller("HomeCtrl",['$scope', 'resume', function($scope, resume){
+app.controller("HomeCtrl",['$scope', 'resume', '$rootScope',function($scope, resume, $rootScope){
 
     //Affichage education
     $scope.mode=0;
@@ -23,8 +23,13 @@ app.controller("HomeCtrl",['$scope', 'resume', function($scope, resume){
     $scope.markers =[];
     $scope.directions=[];
 
+    //Liked skills
+    $scope.likedSkills =[];
+    $scope.dislikedSkills = [];
+
     var map;
     var info = [];
+    //var mySwiper;
 
     function initialize() {
         console.log("oooo")
@@ -46,6 +51,9 @@ app.controller("HomeCtrl",['$scope', 'resume', function($scope, resume){
 
     $scope.init = function() {
 
+        $scope.endOfSkills=false;
+        $scope.awesome=false;
+
         $scope.home = "Front-End Developer"
         $scope.homeDescription = "Experienced since one year in front-end development"
 
@@ -58,27 +66,26 @@ app.controller("HomeCtrl",['$scope', 'resume', function($scope, resume){
         $scope.places = resume.getPlaces();
         $scope.travels = resume.getTravels();
 
-        //Classement des skills
-        for (var it = 0; it < $scope.skills.length; it++) {
-            if ($scope.skills[it].type == "1")
-                $scope.skillLangages.push($scope.skills[it])
-            if ($scope.skills[it].type == "2")
-                $scope.skillFront.push($scope.skills[it])
-            if ($scope.skills[it].type == "3")
-                $scope.skillBack.push($scope.skills[it])
-            if ($scope.skills[it].type == "4")
-                $scope.skillVersion.push($scope.skills[it])
-            if ($scope.skills[it].type == "5")
-                $scope.skillMethod.push($scope.skills[it])
-            if ($scope.skills[it].type == "6")
-                $scope.skillLib.push($scope.skills[it])
-            if ($scope.skills[it].type == "7")
-                $scope.skillTools.push($scope.skills[it])
-        }
 
         //On initialise la carte
         initialize();
 
+        //Initialize le swiper
+       /* mySwiper = new Swiper('.swiper-container', {
+            pagination: '.pagination',
+            loop: true,
+            grabCursor: true,
+            paginationClickable: true
+        })
+        $('.arrow-left').on('click', function (e) {
+            e.preventDefault()
+            mySwiper.swipePrev()
+            console.log("ooo")
+        })
+        $('.arrow-right').on('click', function (e) {
+            e.preventDefault()
+            mySwiper.swipeNext()
+        })*/
 
 
         //Recupération des données
@@ -115,6 +122,68 @@ app.controller("HomeCtrl",['$scope', 'resume', function($scope, resume){
             $scope.placeMarker(myLatlng,place[i].type, place[i].website,place[i].nom);
         }
 
+    }
+
+    //Gestion des SKILLS
+    $scope.checkSkill = function(){
+
+        //derniere
+        if(mySwiper.activeIndex==($scope.skills.length-1)) {
+            $scope.endOfSkills = true;
+            //Ajout de la skills dans la zone de gauche
+            $scope.likedSkills.push($scope.skills[mySwiper.activeIndex])
+
+            if ($scope.dislikedSkills.length > $scope.likedSkills.length) {
+                $scope.awesome = false;
+            } else {
+                $scope.awesome = true;
+            }
+
+            mySwiper.swipeNext()
+        }
+        else if($scope.endOfSkills !=true){
+            //Ajout de la skills dans la zone de gauche
+            $scope.likedSkills.push($scope.skills[mySwiper.activeIndex])
+
+            mySwiper.swipeNext()
+        }
+    }
+
+    $scope.deleteSkill = function(){
+
+        //derniere
+        if(mySwiper.activeIndex==($scope.skills.length-1)) {
+            $scope.endOfSkills = true;
+            //Ajout de la skills dans la zone de droite
+            $scope.dislikedSkills.push($scope.skills[mySwiper.activeIndex])
+
+            if ($scope.dislikedSkills.length > $scope.likedSkills.length) {
+                $scope.awesome = false;
+            } else {
+                $scope.awesome = true;
+            }
+            mySwiper.swipeNext()
+        }
+        else if($scope.endOfSkills !=true){
+
+            //Ajout de la skills dans la zone de droite
+            $scope.dislikedSkills.push($scope.skills[mySwiper.activeIndex])
+
+            mySwiper.swipeNext()
+        }
+
+    }
+
+    //Reset the swiper
+    $scope.resetSwipe = function(){
+        $scope.endOfSkills=false;
+        $scope.awesome=false;
+
+        $scope.dislikedSkills=[];
+        $scope.likedSkills=[];
+
+        //Reset
+        mySwiper.swipeTo(0, 750)
     }
 
     //Placement d'un marqueur

@@ -99,5 +99,33 @@ directives.directive('iconeSearch',['$rootScope', function($rootScope){
     }
 }])
 
+directives.directive("swiperDirective", ["$rootScope", function($rootScope) {
+    return {
+        restrict: "A",
+        controller: function() {
+            this.ready = function() {
+                $rootScope.updateSwiper();
+            }
+        },
+        link: function(scope, element, attrs, ctrl) {
+            mySwiper = new Swiper(".swiper-container", {
+                loop:false
+            });
+        }
+    }
+}]);
+
+directives.directive("swiperSlide", [function() {
+    return {
+        restrict: "A",
+        require: "^swiperDirective",
+        link: function(scope, element, attrs, ctrl) {
+            if(scope.$last) {
+                ctrl.ready();
+            }
+        }
+    }
+}]);
+
 
 

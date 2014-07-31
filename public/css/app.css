@@ -39,9 +39,15 @@ hr.style-two {
     background: white;
 }
 
+hr.style-four {
+    border: 0;
+    height: 1px;
+    background: grey;
+}
+
 
 /* Application font */
-h1,h2,h5,a,p {
+h1,h2,h5,a,p,i {
     font-family: 'bliss', cursive;
 }
 
@@ -155,4 +161,37 @@ h1,h2,h5,a,p {
     -moz-border-radius:7px;
     -webkit-border-radius:7px;
     border-radius:7px;
+}
+
+.spic
+{
+    display: inline-block;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -moz-box-shadow: 0px 0px 2px #888;
+    -webkit-box-shadow: 0px 0px 2px #888;
+    box-shadow: 0px 0px 2px #888;
+}
+
+
+/* hoover tinder*/
+.greenHover:hover{
+    background: #40A624;
+}
+
+.greenHover {
+    background:#3A9A20;
+    text-align:center;
+    padding: 10px;
+
+}
+.redHover:hover{
+    background: #D91929;
+}
+
+.redHover {
+    background:#C71624;
+    text-align:center;
+    padding: 10px;
 }

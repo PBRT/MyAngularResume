@@ -60,41 +60,42 @@ constants.constant( 'Data',{
     skills : [
 
         //Langages de programmation
-        {nom : "Javascript", type: "1", niveau : "70"},
-        {nom : "Java", type: "1", niveau : "55"},
-        {nom : "C/C++", type: "1", niveau : "40"},
-        {nom : "Html / JADE", type: "1", niveau : "70"},
-        {nom : "CSS3", type: "1", niveau : "50"},
+        {nom : "Javascript", type: "Langage", niveau : "70", img: 'images/Icons/javascript.png'},
+        {nom : "Java", type: "Langage", niveau : "55", img: 'images/Icons/java.png'},
+        {nom : "C/C++", type: "Langage", niveau : "40", img: 'images/Icons/c.png'},
+        {nom : "Html / JADE", type: "Langage", niveau : "70", img: 'images/Icons/html5.png'},
+        {nom : "CSS3", type: "Langage", niveau : "50", img: 'images/Icons/css3.png'},
 
 
         //Frameworks front-end
-        {nom : "AngularJS", type: "2", niveau : "70"},
-        {nom : "Bootstrap", type: "2", niveau : "65"},
-        {nom : "JQuery", type: "2", niveau : "30"},
-        {nom : "JQueryMobile", type: "1", niveau : "25"},
+        {nom : "AngularJS", type: "Framework - Front end", niveau : "70", img: 'images/Icons/angular.png'},
+        {nom : "Bootstrap", type: "Framework - Front end", niveau : "65", img: 'images/Icons/bootstrap.png'},
+        {nom : "JQuery", type: "Framework - Front end", niveau : "30", img: 'images/Icons/jquery.jpg'},
+        {nom : "JQueryMobile", type: "Framework - Front end", niveau : "25", img: 'images/Icons/jqm.png'},
 
         //Frameworks back-end
-        {nom : "NodeJS", type: "3", niveau : "30"},
-        {nom : "SailsJS", type: "3", niveau : "85"},
-        {nom : "ExpressJS", type: "3", niveau : "25"},
+        {nom : "NodeJS", type: "Framework - Back end", niveau : "30", img: 'images/Icons/nodejs.png'},
+        {nom : "SailsJS", type: "Framework - Back end", niveau : "85", img: 'images/Icons/sails.png'},
+        {nom : "ExpressJS", type: "Framework - Back end", niveau : "25", img: 'images/Icons/express.png'},
 
         //Outils de gestion de version
-        {nom : "S.V.N.", type: "4", niveau : "60"},
-        {nom : "Git", type: "4", niveau : "60"},
+        {nom : "S.V.N.", type: "Gestion tool", niveau : "60", img: 'images/Icons/svn.png'},
+        {nom : "Git", type: "Gestion tool", niveau : "60", img: 'images/Icons/git.png'},
 
         //Methodologies
-        {nom : "SCRUM (AGILE)", type: "5", niveau : "60"},
+        {nom : "SCRUM (AGILE)", type: "Methodology", niveau : "60", img: 'images/Icons/Scrum.jpg'},
 
         //Libraires
-        {nom : "Google Maps API", type: "6", niveau : "70"},
-        {nom : "MongoDB", type: "6", niveau : "50"},
-        {nom : "SocketIO", type: "6", niveau : "30"},
-        {nom : "Android SDK", type: "6", niveau : "60"},
+        {nom : "Google Maps API", type: "API", niveau : "70", img: 'images/Icons/gmap.jpg'},
+        {nom : "MongoDB", type: "Database", niveau : "50", img: 'images/Icons/mongodb.png'},
+        {nom : "SocketIO", type: "API", niveau : "30", img: 'images/Icons/socketio.png'},
+        {nom : "Android SDK", type: "SDK", niveau : "60", img: 'images/Icons/android.png'},
+        {nom : "Grunt", type: "JS Tool", niveau : "60", img: 'images/Icons/grunt.png'},
 
         //Outils de développement
-        {nom : "Webstorm", type: "7", niveau : "70"},
-        {nom : "Eclipse", type: "7", niveau : "70"},
-        {nom : "Sublime", type: "7", niveau : "40"}
+        {nom : "Webstorm", type: "I.D.E.", niveau : "70", img: 'images/Icons/webstorm.PNG'},
+        {nom : "Eclipse", type: "I.D.E.", niveau : "70", img: 'images/Icons/eclipse.jpg'},
+        {nom : "Sublime", type: "I.D.E.", niveau : "40", img: 'images/Icons/sublime.png'}
 
     ],
     education: [],

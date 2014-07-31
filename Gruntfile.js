@@ -109,8 +109,12 @@ module.exports = function(grunt) {
 
     //Permet de copier les fichiers de polices dans la distribution
     copy: {
-          files:
-              {src: ['public/css/BlissfulThinking.otf'], dest: 'public/dist/BlissfulThinking.otf', filter: 'isFile'}
+        main : {
+            files: [
+                {src: ['public/css/BlissfulThinking.otf'], dest: 'public/dist/BlissfulThinking.otf', filter: 'isFile'},
+                {expand:true,flatten: true,src: 'public/images/Icons/*',  dest: 'public/dist/images/Icons/', filter: 'isFile'}
+            ]
+        }
     },
 
     //Supprime les version non minimifiée de la distribution

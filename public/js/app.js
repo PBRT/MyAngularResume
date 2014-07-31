@@ -1,5 +1,6 @@
 'use strict';
 
+var mySwiper;
 //Declaration des modules de l'application
 angular.module('myApp', [
   'ngRoute',
@@ -36,6 +37,15 @@ config(['$routeProvider','$locationProvider',function ($routeProvider, $location
 }]).
 //Action réalisés au lancement de l'application
 run(['$rootScope','$location',function($rootScope, $location){
+
+    //Reset du SWIPER après le chargement
+    $rootScope.updateSwiper = function () {
+
+        //Reset
+        mySwiper.reInit();
+        $('.swiper-container').css({height:'370px'})
+
+    }
 
   //Definition des composant présent dans la navbar
   // TO DO=> Recupérer depuis le serveur

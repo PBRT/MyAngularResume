@@ -64,37 +64,6 @@ div(ng-init="init()", anim="fadeIn")
                             img(src="/images/Icons/angular.png", style="width:100px;height:100px")
                             h4 AngularJS (Front-end)
 
-            .row(style="text-align:center;margin-top:50px")
-                .col-xs-2(onclick="window.open('http://www.mongodb.org/', '_blank')")
-                    .panel.panel-default.specific(style="border-radius: 15px;", ng-click="changeMode(0)")
-                        .panel-body
-                            img(src="/images/Icons/mongodb.png", style="width:120px;height:90px;margin-bottom:10px")
-                            h5 MongoDB
-                .col-xs-2(onclick="window.open('http://nodejs.org/', '_blank')")
-                    .panel.panel-default.specific(style="border-radius: 15px;", ng-click="changeMode(0)")
-                        .panel-body
-                            img(src="/images/Icons/nodejs.png", style="width:120px;height:90px;margin-bottom:10px")
-                            h5 NodeJS
-                .col-xs-2(onclick="window.open('https://developers.google.com/maps/?hl=FR', '_blank')")
-                    .panel.panel-default.specific(style="border-radius: 15px;", ng-click="changeMode(0)")
-                        .panel-body
-                            img(src="/images/Icons/gmap.jpg", style="width:120px;height:90px;margin-bottom:10px")
-                            h5 Google Maps
-                .col-xs-2(onclick="window.open('http://www.w3.org/TR/html5/', '_blank')")
-                    .panel.panel-default.specific(style="border-radius: 15px;", ng-click="changeMode(0)")
-                        .panel-body
-                            img(src="/images/Icons/html5.png", style="width:120px;height:90px;margin-bottom:10px")
-                            h5 HTML5
-                .col-xs-2(onclick="window.open('http://www.w3schools.com/css/css3_intro.asp', '_blank')")
-                    .panel.panel-default.specific(style="border-radius: 15px;", ng-click="changeMode(0)")
-                        .panel-body
-                            img(src="/images/Icons/css3.png", style="width:120px;height:90px;margin-bottom:10px")
-                            h5 CSS3
-                .col-xs-2(onclick="window.open('http://gruntjs.com/', '_blank')")
-                    .panel.panel-default.specific(style="border-radius: 15px;", ng-click="changeMode(0)")
-                        .panel-body
-                            img(src="/images/Icons/grunt.png", style="width:120px;height:90px;margin-bottom:10px")
-                            h5 Grunt
 
 
         .emptyBox(style="height:500px;background:inherit")
@@ -193,79 +162,73 @@ div(ng-init="init()", anim="fadeIn")
 
     div(style="background: url(images/Pragues/pr2.JPG) no-repeat center center fixed; -webkit-background-size: cover;background-size:cover;-moz-background-size:cover")
         section.box(id="skills")
-            div(style="text-align:center")
+            div(style="text-align:center;margin-bottom:40px")
                 span(class="fa-stack fa-5x")
                     i(class="fa fa-square fa-stack-2x")
                     i(class="fa fa-keyboard-o fa-stack-1x fa-inverse ")
-                h1 COMPUTER SKILLS
+                h1 COMPUTER SKILLS - HOT OR NOT
+                h2(style="font-size:20px") Am I get the skills you need ? Like, swipe or dislike my skills on the phone bellow and check the results
 
-            .device
-                a.arrow-left
-                a.arrow-right
-                .swiper-container
-                    .swiper-wrapper
-                        .swiper-slide
-                            img(src="images/Icons/grunt.png")
-                        .swiper-slide
-                            img(src="images/Icons/sails.png")
-                        .swiper-slide
-                            .content-slide
-                                p.title Test
-                                p Another stuff
-                .pagination
+            .row
+                .col-xs-3(style="margin-top:30px")
+                    .list-group
+                        .list-group-item.active(style="background:#3A9A20")
+                            i.fa.fa-heart-o.fa-4x.pull-left(style="color:white")
+                            h5(style="font-size:25px") Matched Skills
 
-            h4 Langages
-            hr(class="style-three")
-            .row
-                button.btn.btn-default.col-md-2(ng-repeat="skill in skillLangages",style="margin-left:10px; margin-bottom:10px") {{skill.nom}}
-                    br
-                    .progress.progress-striped.active(style="margin-top:20px")
-                        .progress-bar(style="width:{{skill.niveau}}%")
+                        .list-group-item(ng-repeat="skill in likedSkills")
+                            .row(style="margin-top:15px")
+                                .col-xs-4
+                                    p {{skill.nom}}
+                                .col-xs-6
+                                    .progress.progress-striped.active
+                                        .progress-bar.progress-bar-success(style="width:{{skill.niveau}}%")
 
-            h4 Front-end
-            hr(class="style-three")
-            .row
-                button.btn.btn-default.col-md-2(ng-repeat="skill in skillFront",style="margin-left:10px; margin-bottom:10px") {{skill.nom}}
-                    br
-                    .progress.progress-striped.active(style="margin-top:20px")
-                        .progress-bar(style="width:{{skill.niveau}}%")
+                .col-xs-6.center-block
+                    .device
+                        .swiper-container(swiper-directive)
+                            .swiper-wrapper
+                                    .swiper-slide(ng-repeat="skill in skills",swiper-slide, style="text-align:center")
+                                        img(src="{{skill.img}}", style="height:280px;width:250px;margin-top:20px")
+                                        hr.style-four
+                                        h5.pull-left(style="margin-top:-15px;margin-left:10px") {{skill.nom}}
+                                            i(style="margin-left:20px") -- {{skill.type}}
+                                        hr.style-four(style="margin-top:30px")
+                                    .swiper-slide(style="padding-top:100px;text-align:center;background:black;color:white")
+                                        h3 No more skills, reload to do it again or click on reset
+                                        button.btn.btn-default(ng-click="resetSwipe()", style="margin-top:50x") Reset
 
-            h4 Back-end
-            hr(class="style-three")
-            .row
-                button.btn.btn-default.col-md-2(ng-repeat="skill in skillFront",style="margin-left:10px; margin-bottom:10px") {{skill.nom}}
-                    br
-                    .progress.progress-striped.active(style="margin-top:20px")
-                        .progress-bar(style="width:{{skill.niveau}}%")
+                        .col-xs-6.center-block.greenHover(ng-click="checkSkill()", ng-disabled="endOfSkills")
+                            i.fa.fa-thumbs-o-up.fa-4x(style="color:white")
+                        .col-xs-6.center-block.redHover(ng-click="deleteSkill()", ng-disabled="endOfSkills")
+                            i.fa.fa-thumbs-o-down.fa-4x(style="color:white")
 
-            h4 Other
-            hr(class="style-three")
-            .row
-                .col-xs-5
-                    h5 Versionning
-                    button.btn.btn-default.col-md-4(ng-repeat="skill in skillVersion",style="margin-left:10px; margin-bottom:10px") {{skill.nom}}
-                        br
-                        .progress.progress-striped.active(style="margin-top:20px")
-                            .progress-bar(style="width:{{skill.niveau}}%")
-                .col-xs-5
-                    h5 Methodologies
-                    button.btn.btn-default.col-md-4(ng-repeat="skill in skillMethod",style="margin-left:10px; margin-bottom:10px") {{skill.nom}}
-                        br
-                        .progress.progress-striped.active(style="margin-top:20px")
-                            .progress-bar(style="width:{{skill.niveau}}%")
-            .row
-                .col-xs-5
-                    h5 Librairies
-                    button.btn.btn-default.col-md-4(ng-repeat="skill in skillLib",style="margin-left:10px; margin-bottom:10px") {{skill.nom}}
-                        br
-                        .progress.progress-striped.active(style="margin-top:20px")
-                            .progress-bar(style="width:{{skill.niveau}}%")
-                .col-xs-5
-                    h5 Tools
-                    button.btn.btn-default.col-md-4(ng-repeat="skill in skillTools",style="margin-left:10px; margin-bottom:10px") {{skill.nom}}
-                        br
-                        .progress.progress-striped.active(style="margin-top:20px")
-                            .progress-bar(style="width:{{skill.niveau}}%")
+                        h2(style="text-align:center;margin-top:90px;color:white") PBRT
+                    .pagination
+
+                    .list-group-item.active.center-block(style="width:80%;margin-top:80px",ng-if="endOfSkills")
+                        h5(style="font-size:25px;text-align:center") Results
+                    .list-group-item.center-block(style="width:80%;text-align:center", ng-if="awesome && endOfSkills")
+                        h1 You liked more than 50 % of my skills, AWESOME
+                        i.fa.fa-check-circle-o.fa-5x
+                    .list-group-item.center-block(style="width:80%;text-align:center", ng-if="!awesome && endOfSkills")
+                        h1 I think we do not use the same technologies, write me to discuss about it
+                        i.fa.fa-question-circle.fa-5x
+
+
+                .col-xs-3(style="margin-top:30px")
+                    .list-group
+                        .list-group-item.active(style="background:#C71624")
+                            i.fa.fa-heart-o.fa-4x.pull-left(style="color:white")
+                            h5(style="font-size:25px") Dismissed Skills
+                        .list-group-item(ng-repeat="skill in dislikedSkills")
+                            .row(style="margin-top:15px")
+                                .col-xs-4
+                                    p {{skill.nom}}
+                                .col-xs-6
+                                    .progress.progress-striped.active
+                                        .progress-bar.progress-bar-danger(style="width:{{skill.niveau}}%")
+
 
         .emptyBox(style="height:500px;background:inherit")
 

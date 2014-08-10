@@ -45,7 +45,6 @@ app.controller("HomeCtrl",['$scope', 'resume', '$rootScope',function($scope, res
 
         //Positionnement des marqueurs
         $scope.makePlaces($scope.places);
-
     }
 
 

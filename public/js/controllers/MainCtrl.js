@@ -4,6 +4,8 @@
 app.controller('MainCtrl', ['$rootScope', '$scope', '$location', function ($rootScope,$scope,$location){
 
 
+
+    $scope.muteState=0;
     $scope.endEnter=0;
 
     $scope.$on('endEnter', function(){
@@ -28,6 +30,17 @@ app.controller('MainCtrl', ['$rootScope', '$scope', '$location', function ($root
         }
 
     });
+
+    $scope.muting=function(){
+        if($scope.muteState==0) {
+            document.getElementById('radio').muted = true;
+            $scope.muteState=1;
+        }
+        else if($scope.muteState==1) {
+            document.getElementById('radio').muted = false;
+            $scope.muteState = 0;
+        }
+    }
 
     $scope.$on('itemInc',function(){
         $scope.itemx++;

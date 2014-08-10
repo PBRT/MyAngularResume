@@ -4,37 +4,25 @@ div(ng-init="init()", anim="fadeIn")
         section.box(id="home")
             div(style="text-align:center;width:100%")
 
-                    span(class="fa-stack fa-5x")
-                        i(class="fa fa-square fa-stack-2x")
-                        i(class="fa fa-bolt fa-stack-1x fa-inverse ")
+                    img.imgShadow.arrondie2(src="dist/images/PBRT.png")
                     h1 {{home}}
                     h4(style="font-style:italic") {{homeDescription}}
 
-            .row(style="margin-top:80px")
-                .col-xs-1.col-xs-offset-2
-                    i(class="fa fa-quote-left fa-5x ")
-                .col-xs-8
-                    h1(style="font-size:60px") Software do it better
-                .col-xs-1
-                    i(class="fa fa-quote-right fa-5x ")
-            //.row(style="margin-top:-10px")
-                .col-xs-8.col-xs-offset-3
-
 
             .row(style="text-align:center;margin-top:80px")
-                .col-xs-4
+                .col-xs-4(style="color:#386C8C")
                     span(class="fa-stack fa-4x")
                         i(class="fa fa-square fa-stack-2x")
                         i(class="fa fa-cloud fa-stack-1x fa-inverse ")
                     h3 Back End
                     h5(style='font-style:italic') RESTful APIS development based on Node.js
-                .col-xs-4
+                .col-xs-4(style="color:#386C8C")
                     span(class="fa-stack fa-4x")
                         i(class="fa fa-square fa-stack-2x")
                         i(class="fa fa-mobile fa-stack-1x fa-inverse ")
                     h3 Mobile Development
                     h5(style="font-style:italic") Native and Web Android Application
-                .col-xs-4
+                .col-xs-4(style="color:#386C8C")
                     span(class="fa-stack fa-4x")
                         i(class="fa fa-square fa-stack-2x")
                         i(class="fa fa-desktop fa-stack-1x fa-inverse ")
@@ -70,53 +58,35 @@ div(ng-init="init()", anim="fadeIn")
 
     div(style="background: url(images/Travel/tr2.JPG) no-repeat center center fixed;-webkit-background-size: cover;background-size:cover;-moz-background-size:cover")
         section.box(id="education")
-            div(style="text-align:center;margin-bottom:50px")
+            div(style="text-align:center;margin-bottom:50px;color:#386C8C")
                 span(class="fa-stack fa-5x")
                     i(class="fa fa-square fa-stack-2x")
                     i(class="fa fa-graduation-cap fa-stack-1x fa-inverse ")
                 h1 EDUCATION
             .row
-                .col-xs-4
-                    .panel.panel-default.specific(style="border-radius: 10px;", ng-click="changeMode(0)")
-                        .panel-body
-                            h3(style="text-align:center") Education 1
-                            hr(class="style-one")
-                            p Details ...
-                .col-xs-4
-                    .panel.panel-default.specific(style="border-radius: 10px;",ng-click="changeMode(1)")
-                        .panel-body
-                            h3(style="text-align:center") Education 2
-                            hr(class="style-one")
-                            p Details ...
-                .col-xs-4
-                    .panel.panel-default.specific(style="border-radius: 10px;",ng-click="changeMode(2)")
-                        .panel-body
-                            h3(style="text-align:center") Education 3
-                            hr(class="style-one")
-                            p Details ...
-            .row
-                .col-xs-12
-                    .panel.panel-default(style="border-radius: 10px;")
-                        .panel-body
-                            p Details ...
-                            //details one
-                            div(id="detailsOne", ng-show="mode==0")
-                                p Details One
+                .col-xs-4(ng-repeat="ed in education")
+                    div(ng-click="redirecto(ed)")
+                        .panel.panel-default.specific(style="border-radius: 10px;", ng-click="changeMode(0)")
+                            .panel-body
+                                p(style="text-align:center;font-size:25px") {{ed.nom}}
+                                img.center-block(src="{{ed.img}}", style="width:120px;height:120px")
+                                hr(class="style-one")
+                                p(style="text-align:center;font-size:17px") {{ed.sub}}
+                                br
+                                p(style="font-size:14px") {{ed.description}}
 
-                            //details one
-                            div(id="detailsTwo", ng-show="mode==1")
-                                p Details Two
 
-                            //details one
-                            div(id="detailsThree", ng-show="mode==2")
-                                p Details Three
+
+
+
+
 
         .emptyBox(style="height:500px;background:inherit")
 
 
     div(style="background: url(images/Travel/tr13.JPG) no-repeat center center fixed;-webkit-background-size: cover;background-size:cover;-moz-background-size:cover")
         section.box(id="experience")
-            div(style="text-align:center")
+            div(style="text-align:center;color:#386C8C;margin-bottom:40px")
                 span(class="fa-stack fa-5x")
                     i(class="fa fa-square fa-stack-2x")
                     i(class="fa fa-road fa-stack-1x fa-inverse ")
@@ -144,12 +114,13 @@ div(ng-init="init()", anim="fadeIn")
                             .row
                                 .col-xs-6
                                     p(style="font-size:18px") {{exp.description}}
+                                    h2 Context
+                                    p(style="font-size:18px")  {{exp.contexte}}
                                 .col-xs-6
                                     .panel.panel-default.specific(style="border-radius: 5px;")
                                         .panel-body
-                                            p Image explicative
-                            h2 Context
-                            p(style="font-size:18px")  {{exp.contexte}}
+                                                img.center-block(src="{{exp.image}}")
+
                             br
                             h2 Skills
                             .col-md-2(ng-repeat="skill in exp.skills", style="margin-bottom:10px")
@@ -157,12 +128,24 @@ div(ng-init="init()", anim="fadeIn")
                                     .panel-body
                                         h5(style="text-align:center") {{skill.nom}}
 
+            .row(style="margin-top:100px; margin-bottom:80px")
+                .col-xs-1
+                .col-xs-8
+                    .row
+                        i(class="fa fa-quote-left fa-5x pull-left fa-border")
+                        p(style="font-size:25px") You can find all my personals projects on my GitHub Page. Check out Android, Angular, Node and others hot projects and leave me a comment ! Most of these projects has been developed in order to discover and manipulate new technologies. Click on the logo to check it out!
+                        p(style="font-size:19px") You will find the "Shortcut Browser", a Angular Web Application available on heroku, developed to make car pooling easier. You can check it at : http://shortcutbrowser.herokuapp.com
+
+                .col-xs-2(style="color:#386C8C",onclick="window.open('http://github.com/PBRT', '_blank')")
+                    span(class="fa-stack fa-5x")
+                        i(class="fa fa-square fa-stack-2x")
+                        i.contact(class="fa fa-github fa-stack-1x fa-inverse ")
 
         .emptyBox(style="height:500px;background:inherit")
 
     div(style="background: url(images/Pragues/pr2.JPG) no-repeat center center fixed; -webkit-background-size: cover;background-size:cover;-moz-background-size:cover")
         section.box(id="skills")
-            div(style="text-align:center;margin-bottom:40px")
+            div(style="text-align:center;margin-bottom:40px;color:#386C8C")
                 span(class="fa-stack fa-5x")
                     i(class="fa fa-square fa-stack-2x")
                     i(class="fa fa-keyboard-o fa-stack-1x fa-inverse ")
@@ -234,7 +217,7 @@ div(ng-init="init()", anim="fadeIn")
 
     div(style="background: url(images/Travel/tr14.JPG) no-repeat center center fixed; -webkit-background-size: cover;background-size:cover;-moz-background-size:cover")
         section.box(id="about")
-            div.container-fluid(style="text-align:center;margin-bottom:60px")
+            div.container-fluid(style="text-align:center;margin-bottom:60px;color:#386C8C")
                 span(class="fa-stack fa-5x")
                     i(class="fa fa-square fa-stack-2x")
                     i(class="fa fa-coffee fa-stack-1x fa-inverse ")
@@ -347,7 +330,7 @@ div(ng-init="init()", anim="fadeIn")
 
     div(style="background: url(images/Pragues/pr6.JPG) no-repeat center center fixed; -webkit-background-size: cover;background-size:cover;-moz-background-size:cover")
         section.box(id="blog")
-            div(style="text-align:center")
+            div(style="text-align:center;color:#386C8C")
                 span(class="fa-stack fa-5x")
                     i(class="fa fa-square fa-stack-2x")
                     i(class="fa fa-comment-o fa-stack-1x fa-inverse ")
@@ -355,7 +338,7 @@ div(ng-init="init()", anim="fadeIn")
             h3(style='text-align:center') Currently under construction
         .emptyBox(style="height:500px;background:inherit")
 
-    section.container-fluid(id="contact", style="background:#778899;color:white")
+    section.container-fluid(id="contact", style="background:#193E70;color:white")
         div(style="text-align:center;margin-bottom:50px;margin-top:30px")
             h1(style="text-decoration:underline;") Contact
         .row(style="text-align:center")

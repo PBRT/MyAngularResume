@@ -1,3 +1,4 @@
+/*Main CSS */
 
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus{ background: #8f0000}
 
@@ -6,6 +7,14 @@
 .contact:hover{background: #8f0000}
 
 .hoov:hover{background: #8f0000}
+
+.muteicon:hover{color: #8f0000}
+
+.muteicon{
+    color:white;
+    float:left;
+    margin-top:13px;
+}
 
 #content {
     height: calc(100% - 60px);
@@ -95,9 +104,9 @@ h1,h2,h5,a,p,i {
 
 /* Permet ombre derriere image About */
 .imgShadow{
-    box-shadow: 7px 7px 7px #778899;
-    -webkit-box-shadow: 7px 7px 7px #778899;
-    -moz-box-shadow: 7px 7px 7px #778899;
+    box-shadow: 7px 7px 7px ;
+    -webkit-box-shadow: 7px 7px 7px ;
+    -moz-box-shadow: 7px 7px 7px ;
 }
 
 /* Rectangle dans le main */

@@ -112,7 +112,8 @@ module.exports = function(grunt) {
         main : {
             files: [
                 {src: ['public/css/BlissfulThinking.otf'], dest: 'public/dist/BlissfulThinking.otf', filter: 'isFile'},
-                {expand:true,flatten: true,src: 'public/images/Icons/*',  dest: 'public/dist/images/Icons/', filter: 'isFile'}
+                {expand:true,flatten: true,src: 'public/images/Icons/*',  dest: 'public/dist/images/Icons/', filter: 'isFile'},
+                {expand:true,flatten: true,src: 'public/images/Experience/*',  dest: 'public/dist/images/Experience/', filter: 'isFile'}
             ]
         }
     },

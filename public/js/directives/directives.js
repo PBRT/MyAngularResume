@@ -45,10 +45,11 @@ directives.directive('styleExp', ['$compile',function($compile){
             //Pair
             if (n % 2 == 0) {
                 //elm.addClass('{background:#778899;color:white;}')
-                elm.css('background', '#778899')
+                //elm.css('background', '#778899')
+                elm.css('background','#4280A6')
                 elm.css('color', 'white')
             }else{
-                elm.css('background', 'lightgrey')
+                elm.css('background', '#B1D4E5')
             }
         }
     }

@@ -4,6 +4,7 @@ constants.constant( 'Data',{
     experience : [
         {   nom: "INFOTEL Conseil",
             year : '2014',
+            image : 'images/Experience/Infotel.png',
             website: "http://www.infotel.com",
             titre: "Agile developement of an cross platform application",
             soustitre : "Full project composed by two Web Applications, two Android native applications, communicating throught an REST server",
@@ -33,6 +34,7 @@ constants.constant( 'Data',{
         },
         {   nom: "AERODRONES",
             year : '2013',
+            image : 'images/Experience/Aerodrone.png',
             website : "http://www.aerodrones.com/",
             titre: "Development of a closed loop embedded on a drone",
             soustitre : "Sensor interfacing and correction, conception and development of the closed loop",
@@ -54,6 +56,38 @@ constants.constant( 'Data',{
             ],
             contexte:"In a start up context, integrated to the research and development team." +
                 " The software has been integrated in another, to provide a full solution"
+        }
+
+    ],
+    education : [
+
+        //INSA Toulouse
+        {   nom : "I.N.S.A. de Toulouse",
+            sub : "M.S. degree in Computer Science - 2014",
+            description: "Five years of engineering school, from basic physics to high-tech programing and embedded systems." +
+                "\n Work on different fields such as physics, computer science, electronics, programming and culture. " +
+                "\n Formation based on several interesting projects, according to the actual industrial context.  "
+                +"\n Mainly, study of computers at all level, from components to Web development" ,
+            img : "dist/images/Icons/insa.jpg",
+            web : "http://www.insa-toulouse.fr/fr/formation/ingenieur/specialites/aei.html",
+            rang : 0
+        },
+        {
+            nom : "Linköping University (Sweden)",
+            sub : "Erasmus exchange semester during six month- 2012",
+            description : "Total immersion in Swedish culture during six month. Advanced courses on computer architecture, programming and radio frequency"
+                +"\n Project with international students and a lot of travels",
+            img : "dist/images/Icons/lonk.png",
+            web :"http://www.liu.se/?l=en",
+            rang : 1
+        },
+        {
+            nom : "Lycee Marie Curie",
+            sub : "High School Diploma with distinction in Science - 2009",
+            description : "Physics and chemistry as main courses. Start to enjoy programming during labs.",
+            img : "dist/images/Icons/bac.jpg",
+            web : "http://marie-curie.entmip.fr/",
+            rang : 2
         }
 
     ],
@@ -98,7 +132,6 @@ constants.constant( 'Data',{
         {nom : "Sublime", type: "I.D.E.", niveau : "40", img: 'images/Icons/sublime.png'}
 
     ],
-    education: [],
     projets: [],
     about: [],
     places: [

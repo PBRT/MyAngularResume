@@ -28,7 +28,7 @@ config(['$routeProvider','$locationProvider',function ($routeProvider, $location
           controller: 'MainCtrl'
     }).
     otherwise({
-      redirectTo: '/home'
+      redirectTo: '/main'
     });
 
   //Mode HTML5

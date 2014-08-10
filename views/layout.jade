@@ -4,7 +4,7 @@ html(ng-app="myApp")
     meta(charset='utf8')
     base(href='/')
 
-    title Software do it better
+    title PBRT
 
     // --------------------------- LIBS ----------------------------------------//
     //Google Maps
@@ -13,7 +13,7 @@ html(ng-app="myApp")
     //Icons
     link(href="/css/font-awesome-4.1.0/css/font-awesome.min.css", rel="stylesheet")
 
-
+    link(rel="shortcut icon", href="dist/PBRT.ico")
     // --------------------------- APP----------------------------------------//
     //Application minimifiée
     link(rel="stylesheet", href='dist/app.min.css')
@@ -22,10 +22,14 @@ html(ng-app="myApp")
   body(ng-controller="MainCtrl",style="background: url(images/Travel/tr1.JPG) no-repeat center center fixed;background-size:cover")
 
 
+      audio(src="dist/emerge.mp3",id="radio",autoplay="true")
+
       .container-fluid
           .navbar.navbar-default.navbar-fixed-top(role='navigation', ng-if="displayHome")
               .navbar-header
-                  a.navbar-brand(style="color:#F1F2F4;font-size:25px",href="#main",du-smooth-scroll, du-scrollspy, offset="50", anim="slideInLeft") PBRT (#Whatever)
+                  span
+                    a.navbar-brand(style="color:#F1F2F4;font-size:25px",href="#main",du-smooth-scroll, du-scrollspy, offset="50", anim="slideInLeft") PBRT (#Whatever)
+                    i.fa.fa-volume-up.fa-2x.muteicon(mute="radio", ng-click="muting()", anim="slideInLeft")
               ul.nav.navbar-nav.pull-right
                 li#yolo(ng-repeat="item in menu", navtab, navtab-item="{{item}}", navtab-rang="{{item.rang}}")
                     a(href="{{item.url}}", style="color:#F1F2F4;font-size:20px",du-smooth-scroll, du-scrollspy, offset="50") {{item.name}}

@@ -23,6 +23,7 @@ module.exports = function(grunt) {
                 'public/libs/bootstrap.min.js',
                 'public/libs/angular-resource.min.js',
                 'public/libs/angular-scroll.js',
+				'public/libs/mandrill.js',
                 'public/libs/ui-bootstrap-tpls-0.11.0.min.js',
                 'public/libs/idangerous.swiper-2.1.min.js',
 

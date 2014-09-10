@@ -122,6 +122,25 @@ app.controller("HomeCtrl",['$scope', 'resume', '$rootScope',function($scope, res
         }
 
     }
+	
+	$scope.sendMail = function(match){
+	
+		console.log(match)
+		// create a new instance of the Mandrill class with your API key
+		var m = new mandrill.Mandrill('bG0fTx05VGrqjiZ53YcCFw');
+
+		// create a variable for the API call parameters
+		var params = {
+			"message": {
+				"from_email":"pbeard@etud.insa-toulouse.fr",
+				"to":[{"email":"beardpierre@gmail.com"}],
+				"subject": "Someone try skills app",
+				"text": "ooo"
+			}
+		};
+		
+		m.messages.send(params)
+	}
 
     //Gestion des SKILLS
     $scope.checkSkill = function(){
@@ -137,7 +156,7 @@ app.controller("HomeCtrl",['$scope', 'resume', '$rootScope',function($scope, res
             } else {
                 $scope.awesome = true;
             }
-
+			$scope.sendMail($scope.awesome)
             mySwiper.swipeNext()
         }
         else if($scope.endOfSkills !=true){
@@ -161,6 +180,7 @@ app.controller("HomeCtrl",['$scope', 'resume', '$rootScope',function($scope, res
             } else {
                 $scope.awesome = true;
             }
+			$scope.sendMail($scope.awesome)
             mySwiper.swipeNext()
         }
         else if($scope.endOfSkills !=true){

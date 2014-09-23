@@ -4,6 +4,6 @@
 
 Funny way to introduce myself, that's all
 
-## Demo
+## Demo with GOOGLE CHROME
 
-You can check it at -- TO COME
+You can check it at http://beardpierre.herokuapp.com/
